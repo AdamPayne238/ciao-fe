@@ -32,9 +32,9 @@ const authLink = setContext((_, {headers}) => {
     }
   }
 })
-//OLD ws://ciao-be-vscode.herokuapp.com/
+
 const wsLink = new WebSocketLink({
-  uri: `https://ciao-be-vscode.herokuapp.com/`,
+  uri: `ws://ciao-be-vscode.herokuapp.com/`,
   options: {
       reconnect: true,
       connectionParams: {
@@ -57,7 +57,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
- ReactDOM.render(
+ReactDOM.render(
   <BrowserRouter>
     <ApolloProvider client={client}>
       <App />
