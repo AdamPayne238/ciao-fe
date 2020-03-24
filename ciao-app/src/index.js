@@ -20,7 +20,7 @@ import { getMainDefinition } from 'apollo-utilities'
 const AUTH_TOKEN = process.env.AUTH_TOKEN
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3000'
+  uri: 'https://ciao-be-vscode.herokuapp.com/'
 })
 
 const authLink = setContext((_, {headers}) => {
@@ -34,7 +34,7 @@ const authLink = setContext((_, {headers}) => {
 })
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000`,
+  uri: `ws://ciao-be-vscode.herokuapp.com/`,
   options: {
       reconnect: true,
       connectionParams: {
@@ -57,7 +57,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-ReactDOM.render(
+ ReactDOM.render(
   <BrowserRouter>
     <ApolloProvider client={client}>
       <App />
