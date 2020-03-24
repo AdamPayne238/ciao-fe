@@ -48,17 +48,12 @@ const Login = (props) => {
                     onCompleted={data => confirm(data)}
                     >
                     {mutation => (
-                    <div onClick={mutation}>
+                    <button onClick={mutation}>
                         {'login'}
-                    </div>
+                    </button>
                     )}
                 </Mutation>
             </div>
-            <button
-              className="pointer button"
-              onClick={() => setLogin( login )}
-            >
-            </button>
         </div>
     )
 }
