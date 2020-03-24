@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // EXTRA IMPORTS
@@ -9,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from '../src/components/Header'
 import Login from '../src/components/Login'
 import Register from '../src/components/Register'
+import UserHome from '../src/components/UserHome'
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/user-home" component={UserHome} />
           </Switch>
     </div>
   );

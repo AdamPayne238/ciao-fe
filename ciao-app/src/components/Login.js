@@ -22,9 +22,9 @@ const Login = (props) => {
     }
 
     const confirm = async data => {
-        const { token } = login ? data.login : data.signup
+        const { token } = data.login
         saveUserData(token)
-        props.history.push(`/`)
+        props.history.push(`/user-home`)
     }
 
     return(
@@ -48,19 +48,16 @@ const Login = (props) => {
                     onCompleted={data => confirm(data)}
                     >
                     {mutation => (
-                    <div className="pointer mr2 button" onClick={mutation}>
-                        {login ? 'login' : 'create account'}
+                    <div onClick={mutation}>
+                        {'login'}
                     </div>
                     )}
                 </Mutation>
             </div>
             <button
               className="pointer button"
-              onClick={() => setLogin( !login )}
+              onClick={() => setLogin( login )}
             >
-              {login
-                ? 'need to create an account?'
-                : 'already have an account?'}
             </button>
         </div>
     )
