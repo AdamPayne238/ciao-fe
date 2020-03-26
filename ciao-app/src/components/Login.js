@@ -43,10 +43,10 @@ const Login = (props) => {
             />
             <div className="login-mutation">
             <Mutation
-                    mutation={LOGIN_MUTATION}
-                    variables={{ email, password }}
-                    onCompleted={data => confirm(data)}
-                    >
+                mutation={LOGIN_MUTATION}
+                variables={{ email, password }}
+                onCompleted={data => confirm(data)}
+            >
                     {mutation => (
                     <button onClick={mutation}>
                         {'login'}

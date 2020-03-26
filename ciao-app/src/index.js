@@ -20,7 +20,7 @@ import { setContext } from 'apollo-link-context'
 const AUTH_TOKEN = process.env.AUTH_TOKEN
 
 const httpLink = createHttpLink({
-  uri: 'https://ciao-be-vscode.herokuapp.com/'
+  uri: 'http://localhost:4500'
 })
 
 const authLink = setContext((_, {headers}) => {
