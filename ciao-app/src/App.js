@@ -5,19 +5,19 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Components
-import Header from '../src/components/Header'
-import Login from '../src/components/Login'
-import Register from '../src/components/Register'
-import UserHome from '../src/components/UserHome'
+import NavBar from './components/landing-page/NavBar'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import UserHome from './components/landing-page/LandingPage'
 
 function App() {
   return (
     <div className="App">
-        <Header />
+        <NavBar />
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/user-home" component={UserHome} />
+            <Route exact path="/" component={UserHome} />
           </Switch>
     </div>
   );
