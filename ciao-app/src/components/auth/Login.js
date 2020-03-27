@@ -27,7 +27,7 @@ const Login = (props) => {
     const confirm = async data => {
         const { token } = data.login
         saveUserData(token)
-        props.history.push(`/user-home`)
+        props.history.push(`/ciao`)
     }
 
     return(

@@ -27,7 +27,7 @@ const Register = (props) => {
     const confirm = async data => {
         const {token} = data.register
         saveUserData(token)
-        props.history.push(`/`)
+        props.history.push(`/ciao`)
     }
 
     const saveUserData = token => {

@@ -9,10 +9,10 @@ const NavBar = () => {
                 <h1>LOGO</h1>
             </LogoDiv>
             <LinkDiv className="link">
-                <Link>Home</Link>
-                <Link>Features</Link>
-                <Link to='/login'>Login</Link>
+                <Link to="/">Home</Link>
+                <Link to="/features">Features</Link>
                 <Link to='/register'>Register</Link>
+                <Link to='/login'>Login</Link>
             </LinkDiv>
         </NavContainer>
     )
@@ -22,13 +22,12 @@ export default NavBar
 
 // Styling
 const NavContainer = styled.div`
-    border: 1px solid black;
+    border-bottom: 1px dashed black;
     display: flex;
     justify-content: space-between;
     
 `
 const LogoDiv = styled.div`
-    border: 1px solid blue;
     flex-direction: flex-start;
     max-width: 30%;
     margin:auto;
@@ -36,7 +35,6 @@ const LogoDiv = styled.div`
 `
 const LinkDiv = styled.div`
     text-align: center;
-    border: 1px solid black;
     margin:auto;
     width: 45%;
     flex-direction: flex-end;
