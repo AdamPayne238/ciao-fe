@@ -23,7 +23,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/features" component={Features} />
-            <PrivateRoute exact path='/ciao' component={Ciao} />
+            <PrivateRoute exactpath='/ciao' component={Ciao} />
          
  
     </div>
