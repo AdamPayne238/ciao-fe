@@ -5,22 +5,29 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 // Components
-import Header from '../src/components/Header'
-import Login from '../src/components/Login'
-import Register from '../src/components/Register'
-import UserHome from '../src/components/UserHome'
+import NavBar from './components/landing-page/NavBar'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import PrivateRoute from './components/auth/PrivateRoute'
+import LandingPage from './components/landing-page/LandingPage'
+import Features from './components/landing-page/Features'
+import Ciao from './components/app/Ciao'
+
 
 function App() {
   return (
     <div className="App">
-        <Header />
-          <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/user-home" component={UserHome} />
-          </Switch>
+      <NavBar />
+          
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/features" component={Features} />
+            <PrivateRoute exactpath='/ciao' component={Ciao} />
+         
+ 
     </div>
-  );
+  )
 }
 
 export default App;
