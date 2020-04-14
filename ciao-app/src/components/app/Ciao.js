@@ -1,13 +1,15 @@
 import React from 'react'
-import Tabs from './sub/Tabs'
-import styled from 'styled-components'
+import Tabs from './sub/tabs/Tabs'
+import Messages from './sub/messages/Messages'
+import ActiveMessage from './sub/active-message/ActiveMessage'
 
 const Ciao = () => {
 
     return(
-        <div>
+        <div className="ciao-container">
             <Tabs />
-            
+            <Messages />
+            <ActiveMessage />
         </div>
     
     )
@@ -15,7 +17,4 @@ const Ciao = () => {
 
 export default Ciao
 
-//styles
-const CiaoContainer = styled.div`
-    background: #171926;
-`
+

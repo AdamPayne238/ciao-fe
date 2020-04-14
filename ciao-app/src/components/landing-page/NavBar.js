@@ -39,7 +39,13 @@ const LinkDiv = styled.div`
     width: 45%;
     flex-direction: flex-end;
     a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
         font-family: 'Baloo Da 2';
-        padding: 10%;
+        // padding: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+
     }
 `

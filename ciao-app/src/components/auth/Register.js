@@ -5,6 +5,7 @@ import gql from 'graphql-tag'
 
 //Style
 import styled from 'styled-components'
+import './Auth.scss'
 
 const REGISTER_MUTATION = gql`
     mutation RegisterMutation($first_name: String!, $last_name: String!, $email: String!, $password: String!, $city: String!, $state: String!){

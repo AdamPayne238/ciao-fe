@@ -1,6 +1,9 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import styled from 'styled-components'
+
+import EmptyProfilePic from '../../../../images/empty-profile.png'
+
+// Styling
 import './Tabs.scss'
 
 
@@ -9,16 +12,18 @@ const Tabs = () => {
 
     return(
         <div className="tab-container">
-            <div>
-                <h1>Profile Pic</h1>
+
+            <div className="profile-picture">
+               <img src={EmptyProfilePic}></img>
+            </div>
+            <div className="profile-name">
+                <h2>Hello, User</h2>
             </div>
 
-            <NavLink to="/home" activeClassName='active'>
+            <NavLink to="/profile" activeClassName='active'>
                 <div className="tab-row">
-                <a 
-                color={pathname.includes('/home') ? 'black' : 'black'}
-                >
-                    Home
+                <a color={pathname.includes('/profile') ? 'black' : 'black'}>
+                    Profile
                 </a>
                 </div>
             </NavLink>
@@ -60,40 +65,3 @@ const Tabs = () => {
 }
 
 export default Tabs
-
-// Styles
-const TabContainer = styled.div`
-    border: 1px solid black;
-    z-index: 900;
-    position: fixed;
-    // top: 20.5rem;
-    left: 0;
-    width: 22rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    justify-content: flex-end;
-    background: #E1463E;
-    justify-content: center;
-    height: 100%;
-    a{
-        text-decoration: none;
-        color: #EFC2C6;
-    }
-    a:last-of-type {
-        // margin-bottom: 0rem;
-      }
-`
-
-const TabRow = styled.div`
-    display: flex;
-    width: 18.1rem;
-    height: 4.5rem;
-    padding-left: 2.4rem;
-    align-items: center;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 2.2rem;
-    text-align: center;
-`

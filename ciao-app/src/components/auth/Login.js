@@ -5,6 +5,7 @@ import {AUTH_TOKEN} from '../../constants'
 
 //style
 import styled from 'styled-components'
+import './Auth.scss'
 
 const LOGIN_MUTATION = gql`
     mutation LoginMutation($email: String!, $password: String!){
@@ -69,7 +70,7 @@ export default Login
 
 //Styles
 const LoginContainer = styled.div`
-width: 600px;
+// width: 1rem;
 min-height: 88vh;
 margin: 30px auto;
 display: flex;
