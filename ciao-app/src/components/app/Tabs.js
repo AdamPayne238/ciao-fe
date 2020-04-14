@@ -11,41 +11,43 @@ const Tabs = () => {
                 <h1>Profile Pic</h1>
             </div>
 
-            <NavLink to="/test">
+            <NavLink to="/home">
                 <TabRow>
-                <a color={pathname.includes('/test') ? '#FB2046' : '#FB2046'}>
+                <a 
+                background={pathname.includes('/home') ? 'black' : 'black'}
+                >
                     Home
                 </a>
                 </TabRow>
             </NavLink>
 
-            <NavLink to="/newtest">
+            <NavLink to="/messages">
                 <TabRow>
-                <a color={pathname.includes('/test') ? '#FB2046' : '#FB2046'}>
+                <a color={pathname.includes('/messages') ? 'blue' : 'orange'}>
                     Messages
                 </a>
                 </TabRow>
             </NavLink>
 
-            <NavLink to="/newtest">
+            <NavLink to="/contacts">
                 <TabRow>
-                <a color={pathname.includes('/test') ? '#FB2046' : '#FB2046'}>
+                <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
                     Contacts
                 </a>
                 </TabRow>
             </NavLink>
 
-            <NavLink to="/newtest">
+            <NavLink to="/notifications">
                 <TabRow>
-                <a color={pathname.includes('/test') ? '#FB2046' : '#FB2046'}>
+                <a color={pathname.includes('/notifications') ? '#FB2046' : '#FB2046'}>
                     Notifications
                 </a>
                 </TabRow>
             </NavLink>
 
-            <NavLink to="/newtest">
+            <NavLink to="/settings">
                 <TabRow>
-                <a color={pathname.includes('/test') ? '#FB2046' : '#FB2046'}>
+                <a color={pathname.includes('/settings') ? 'black' : 'black'}>
                     Settings
                 </a>
                 </TabRow>
@@ -74,7 +76,6 @@ const TabContainer = styled.div`
     height: 100%;
     a{
         text-decoration: none;
-        // margin-bottom: 1.8rem;
         color: #EFC2C6;
     }
     a:last-of-type {
@@ -95,3 +96,7 @@ const TabRow = styled.div`
     text-align: center;
 `
 
+const testButton = styled.button`
+    color: #fb2046 !important;
+    margin-left: 1.6rem;
+`
