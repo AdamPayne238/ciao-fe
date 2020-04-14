@@ -1,19 +1,20 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import '../../App.css';//Users/captaincrook/ciao-fe/ciao-app/src/App.css
+import './Tabs.scss'
+
 
 const Tabs = () => {
     const { pathname } = useLocation()
 
     return(
-        <div>
+        <div className="tab-container">
             <div>
                 <h1>Profile Pic</h1>
             </div>
 
             <NavLink to="/home" activeClassName='active'>
-                <div>
+                <div className="tab-row">
                 <a 
                 color={pathname.includes('/home') ? 'black' : 'black'}
                 >
@@ -23,7 +24,7 @@ const Tabs = () => {
             </NavLink>
 
             <NavLink to="/messages">
-                <div>
+                <div className="tab-row">
                 <a color={pathname.includes('/messages') ? 'blue' : 'orange'}>
                     Messages
                 </a>
@@ -31,7 +32,7 @@ const Tabs = () => {
             </NavLink>
 
             <NavLink to="/contacts">
-                <div>
+                <div className="tab-row">
                 <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
                     Contacts
                 </a>
@@ -39,7 +40,7 @@ const Tabs = () => {
             </NavLink>
 
             <NavLink to="/notifications">
-                <div>
+                <div className="tab-row">
                 <a color={pathname.includes('/notifications') ? '#FB2046' : '#FB2046'}>
                     Notifications
                 </a>
@@ -47,7 +48,7 @@ const Tabs = () => {
             </NavLink>
 
             <NavLink to="/settings">
-                <div>
+                <div className="tab-row">
                 <a color={pathname.includes('/settings') ? 'black' : 'black'}>
                     Settings
                 </a>

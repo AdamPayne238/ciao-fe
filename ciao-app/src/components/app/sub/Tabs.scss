@@ -1,0 +1,38 @@
+.tab-container{
+    z-index: 900;
+    position: fixed;
+    top: 20.5rem;
+    left: 0;
+    width: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: flex-end;
+
+    a{
+        text-decoration: none;
+        margin-bottom: 1.8rem;
+    }
+
+    a:last-of-type {
+        margin-bottom: 0rem;
+      }
+
+    .tab-row{
+        display: flex;
+        width: 18.1rem;
+        height: 4.5rem;
+        padding-left: 2.4rem;
+        align-items: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        text-align: center;
+    }
+}
+
+.active{
+    background: black;
+    color: white;
+}

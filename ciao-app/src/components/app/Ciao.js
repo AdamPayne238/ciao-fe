@@ -1,5 +1,5 @@
 import React from 'react'
-import Tabs from './Tabs'
+import Tabs from './sub/Tabs'
 import styled from 'styled-components'
 
 const Ciao = () => {
