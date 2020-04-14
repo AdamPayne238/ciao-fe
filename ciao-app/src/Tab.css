@@ -1,0 +1,7 @@
+.active{
+    margin: 0 0 1.8rem 0;
+    height: 4.5rem;
+    background: blue;
+    border-top-right-radius: 2.25rem;
+    border-bottom-right-radius: 2.25rem;
+}

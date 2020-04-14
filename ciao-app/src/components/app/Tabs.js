@@ -1,59 +1,60 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
+import '../../App.css';//Users/captaincrook/ciao-fe/ciao-app/src/App.css
 
 const Tabs = () => {
     const { pathname } = useLocation()
 
     return(
-        <TabContainer>
+        <div>
             <div>
                 <h1>Profile Pic</h1>
             </div>
 
-            <NavLink to="/home">
-                <TabRow>
+            <NavLink to="/home" activeClassName='active'>
+                <div>
                 <a 
-                background={pathname.includes('/home') ? 'black' : 'black'}
+                color={pathname.includes('/home') ? 'black' : 'black'}
                 >
                     Home
                 </a>
-                </TabRow>
+                </div>
             </NavLink>
 
             <NavLink to="/messages">
-                <TabRow>
+                <div>
                 <a color={pathname.includes('/messages') ? 'blue' : 'orange'}>
                     Messages
                 </a>
-                </TabRow>
+                </div>
             </NavLink>
 
             <NavLink to="/contacts">
-                <TabRow>
+                <div>
                 <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
                     Contacts
                 </a>
-                </TabRow>
+                </div>
             </NavLink>
 
             <NavLink to="/notifications">
-                <TabRow>
+                <div>
                 <a color={pathname.includes('/notifications') ? '#FB2046' : '#FB2046'}>
                     Notifications
                 </a>
-                </TabRow>
+                </div>
             </NavLink>
 
             <NavLink to="/settings">
-                <TabRow>
+                <div>
                 <a color={pathname.includes('/settings') ? 'black' : 'black'}>
                     Settings
                 </a>
-                </TabRow>
+                </div>
             </NavLink>
 
-        </TabContainer>
+        </div>
     )
 }
 
@@ -94,9 +95,4 @@ const TabRow = styled.div`
     font-size: 2rem;
     line-height: 2.2rem;
     text-align: center;
-`
-
-const testButton = styled.button`
-    color: #fb2046 !important;
-    margin-left: 1.6rem;
 `
