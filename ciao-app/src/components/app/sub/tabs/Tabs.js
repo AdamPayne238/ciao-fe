@@ -13,9 +13,14 @@ const Tabs = () => {
     return(
         <div className="tab-container">
 
+            <div className="profile-button">
+                <a href="#">...</a>
+            </div>
+
             <div className="profile-picture">
                <img src={EmptyProfilePic}></img>
             </div>
+
             <div className="profile-name">
                 <h2>Hello, User</h2>
             </div>

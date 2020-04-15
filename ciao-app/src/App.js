@@ -17,7 +17,7 @@ import Ciao from './components/app/Ciao'
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
           
             <Route exact path="/" component={LandingPage} />
             <Route path="/login" component={Login} />
