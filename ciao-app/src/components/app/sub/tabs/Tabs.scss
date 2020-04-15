@@ -1,14 +1,14 @@
 .tab-container{
     // z-index: 900;
-    position: fixed;
+    // position: fixed;
+    // position: absolute;
     width: 22rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     background: #E1463E;
-    justify-content: flex-start;
     height: 100%;
-    border-radius: 0 25px 0 25px;
+    border-radius: 0 25px 25px 0;
 
     a{
         text-decoration: none;
@@ -27,11 +27,8 @@
         height: 4.5rem;
         padding-left: 2.4rem;
         align-items: center;
-        font-style: normal;
         font-weight: 600;
         font-size: 2rem;
-        // line-height: 2.2rem;
-        text-align: center;
     }
 
 }
@@ -54,14 +51,20 @@
 //     box-shadow: 0 -25px 0 0 #171926;
 //   }
 
-.profile-picture img{
+.profile-picture{
+    text-align: center;
+
+    img{
     height: 13rem;
     width: 13rem;
     border-radius: 50%;
     margin-top: 3rem;
+    // justify-content: center;
+}
 }
 
 .profile-name h2{
     color: white;
+    text-align: center;
 }
 
