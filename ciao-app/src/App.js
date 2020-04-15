@@ -24,7 +24,6 @@ function App() {
             <Route path="/register" component={Register} />
             <Route path="/features" component={Features} />
             <PrivateRoute exactpath='/ciao' component={Ciao} />
-         
  
     </div>
   )
