@@ -1,5 +1,41 @@
-.conversation-container{
-    // border: 2px solid lightsalmon;
-    height: 75%;
-}
 
+.messages {
+    max-height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    height: 80%;
+    padding: 0.2em;
+    overflow: hidden;
+    list-style: none;
+    p{
+        margin: 0;
+    }
+  }
+  .msg-wp {
+    overflow: auto; /* clearfix */
+    // padding: 0.8em;
+  }
+  .msg {
+    text-align: left;
+    border-radius: 0 15px 15px 15px;
+    background: #282C47;
+    padding: 0.5em;
+    margin: 0;
+    float: left;
+    max-width: 50%;
+    // box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    font-size: 1.5rem;
+    color: white;
+  }
+  .owner {
+    float: right;
+    text-align: left;
+    background: #E1463E;
+    border-radius: 15px 0 15px 15px;
+  }
