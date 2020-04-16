@@ -1,7 +1,30 @@
 .chat-input-container{
-    border: 2px solid blanchedalmond;
+    // border: 2px solid blanchedalmond;
+    background: #282C47;
     height: 7%;
     width: 95%;
     margin: auto;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    input{
+        width: 75%;
+        background: #282C47 ;
+        border: #282C47;
+        font-size: 1.8rem;
+        padding-left: 1rem;
+        border-left: 0.1px solid #8C8C8C;
+    }
+    button{
+        margin-top: 0.25rem;
+        margin-right: 2rem;
+        text-align: center;
+        height: 3.5rem;
+        width: 3.5rem;
+        background: #D74344;
+        border: #D74344;
+        border-radius: 50%;
+        color: white;
+        font-size: 1rem;
+    }
 }
