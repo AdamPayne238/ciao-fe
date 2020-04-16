@@ -13,23 +13,17 @@
     a{
         text-decoration: none;
         color: #EFC2C6;
-        font-size: 1.7rem;
-        margin-bottom: 1rem;
+        font-size: 1.6rem;
     }
 
-
-    a:last-of-type {
-        margin-bottom: 0rem;
-      }
 
     .tab-row{
         display: flex;
         width: 18.1rem;
-        height: 4.5rem;
+        height: 5.5rem;
         padding-left: 2.4rem;
         align-items: center;
         font-weight: 600;
-        font-size: 2rem;
     }
 
 }
@@ -37,7 +31,6 @@
 .active{
     background:#171926;
     color: #EFC2C6;
-    // border-radius: 0 0 0 20px;
 }
 .active::before {
     content: "";
@@ -45,10 +38,10 @@
     color: #EFC2C6;
     background-color: #E1463E; //#E1463E
     // bottom: 400px;
-    height: 12px;
+    height: 15px;
     width: 272px;
     // border-bottom-right-radius: 25px;
-    border-radius: 0 0 40px 0;
+    border-radius: 0 0 1rem 0;
     box-shadow: 0 0 0 -10px #171926; //#171926
   }
 .active::after {
@@ -57,11 +50,11 @@
     color: #EFC2C6;
     // background-color: blue; //#E1463E
     // bottom: 400px;
-    height: 12px;
+    height: 15px;
     width: 272px;
     // border-bottom-right-radius: 25px;
-    border-radius: 0 40px 0 0;
-    box-shadow: 0 -10px 0 0 #E1463E; //#171926
+    border-radius: 0 1rem 0 0;
+    box-shadow: 0 -14px 0 0 #E1463E; //#171926
 }
 .profile-picture{
     text-align: center;
