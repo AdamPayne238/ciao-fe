@@ -6,7 +6,7 @@ import './Conversation.scss'
 const Conversation = () => {
     return(
         <div className="conversation-container">
-
+            
         </div>
     )
 }

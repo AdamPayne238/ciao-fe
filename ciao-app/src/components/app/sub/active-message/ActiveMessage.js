@@ -1,5 +1,5 @@
 import React from 'react'
-import ChatNav from './chatinput/ChatInput'
+import ChatNav from './chatnav/ChatNav'
 import Conversation from './conversation/Conversation'
 import ChatInput from './chatinput/ChatInput'
 

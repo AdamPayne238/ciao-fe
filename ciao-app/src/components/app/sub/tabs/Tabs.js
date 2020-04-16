@@ -3,6 +3,8 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 import EmptyProfilePic from '../../../../images/empty-profile.png'
 
+
+
 // Styling
 import './Tabs.scss'
 
@@ -25,10 +27,10 @@ const Tabs = () => {
                 <h2>Hello, User</h2>
             </div>
 
-            <NavLink to="/profile" activeClassName='active'>
+            <NavLink to="/home" activeClassName='active'>
                 <div className="tab-row">
-                <a color={pathname.includes('/profile') ? 'black' : 'black'}>
-                    Profile
+                <a color={pathname.includes('/home') ? 'black' : 'black'}>
+                    Home
                 </a>
                 </div>
             </NavLink>
