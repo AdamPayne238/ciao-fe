@@ -3,6 +3,10 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 import EmptyProfilePic from '../../../../images/empty-profile.png'
 
+// SVG
+import Icon from '../../../../global/Icon'
+import { ICONS } from '../../../../global/IconConstants'
+
 // Styling
 import './Tabs.scss'
 
@@ -13,24 +17,41 @@ const Tabs = () => {
     return(
         <div className="tab-container">
 
+            <div className="profile-button">
+                <a href="#">...</a>
+            </div>
+
             <div className="profile-picture">
                <img src={EmptyProfilePic}></img>
             </div>
+
             <div className="profile-name">
                 <h2>Hello, User</h2>
             </div>
 
-            <NavLink to="/profile" activeClassName='active'>
+            <NavLink to="/home" activeClassName='active'>
                 <div className="tab-row">
-                <a color={pathname.includes('/profile') ? 'black' : 'black'}>
-                    Profile
-                </a>
+                    <Icon
+                        icon={ICONS.HOME}
+                        width={32}
+                        height={32}
+                        color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
+                    />
+                    <a color={pathname.includes('/home') ? '#FB2046' : '#FB2046'}>
+                        Home
+                    </a>
                 </div>
             </NavLink>
 
             <NavLink to="/messages">
                 <div className="tab-row">
-                <a color={pathname.includes('/messages') ? 'blue' : 'orange'}>
+                <Icon
+                        icon={ICONS.BUBBLE}
+                        width={32}
+                        height={36}
+                        color={pathname.includes('/messages') ? '#E1473E' : '#EFC2C6'}
+                    />
+                <a color={pathname.includes('/messages') ? '#FB2046' : '#FB2046'}>
                     Messages
                 </a>
                 </div>
@@ -38,6 +59,12 @@ const Tabs = () => {
 
             <NavLink to="/contacts">
                 <div className="tab-row">
+                <Icon
+                        icon={ICONS.NOTEBOOK}
+                        width={32}
+                        height={36}
+                        color={pathname.includes('/contacts') ? '#E1473E' : '#EFC2C6'}
+                    />
                 <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
                     Contacts
                 </a>
@@ -46,6 +73,12 @@ const Tabs = () => {
 
             <NavLink to="/notifications">
                 <div className="tab-row">
+                <Icon
+                        icon={ICONS.BELL}
+                        width={32}
+                        height={36}
+                        color={pathname.includes('/notifications') ? '#E1473E' : '#EFC2C6'}
+                    />
                 <a color={pathname.includes('/notifications') ? '#FB2046' : '#FB2046'}>
                     Notifications
                 </a>
@@ -54,7 +87,13 @@ const Tabs = () => {
 
             <NavLink to="/settings">
                 <div className="tab-row">
-                <a color={pathname.includes('/settings') ? 'black' : 'black'}>
+                <Icon
+                        icon={ICONS.SETTINGS}
+                        width={32}
+                        height={36}
+                        color={pathname.includes('/settings') ? '#E1473E' : '#EFC2C6'}
+                    />
+                <a color={pathname.includes('/settings') ? '#FB2046' : '#FB2046'}>
                     Settings
                 </a>
                 </div>

@@ -3,6 +3,8 @@ import Tabs from './sub/tabs/Tabs'
 import Messages from './sub/messages/Messages'
 import ActiveMessage from './sub/active-message/ActiveMessage'
 
+import './Ciao.scss'
+
 const Ciao = () => {
 
     return(

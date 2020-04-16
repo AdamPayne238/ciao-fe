@@ -1,0 +1,61 @@
+.chat-input-container{
+    // border: 2px solid blanchedalmond;
+    background: #282C47;
+    height: 7%;
+    width: 90%;
+    margin: auto;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    .chat-input-icons{ 
+        display: flex;
+        justify-content: center;
+        line-height: 20px;
+       
+        svg{
+            margin-left: 5px;
+            margin-right: 5px;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    input{
+        width: 75%;
+        background: #282C47 ;
+        border: #282C47;
+        font-size: 1.6rem;
+        padding-left: 1rem;
+        margin-left: 1rem;
+        border-left: 0.1px solid #6A6C84;
+        color: #6A6C84;
+
+    }
+    input::placeholder{
+        color: #6A6C84;
+        font-size: 2rem;
+      }
+    
+    button{
+        margin-top: 0.5rem;
+        margin-right: 2rem;
+        text-align: center;
+        height: 3rem;
+        width: 3rem;
+        background: #D74344;
+        border: #D74344;
+        border-radius: 60%;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        svg{
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
+}
+
+// REMOVE INPUT HIGHLIGHTING
+input:focus{
+    outline: none;
+}
