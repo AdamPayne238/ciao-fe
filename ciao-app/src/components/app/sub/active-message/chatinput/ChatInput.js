@@ -3,12 +3,39 @@ import React from 'react'
 // Styles
 import './ChatInput.scss'
 
+//SVG
+import Icon from '../../../../../global/Icon'
+import { ICONS } from '../../../../../global/IconConstants'
+
 const ChatInput = () => {
     return(
         <div className="chat-input-container">
 
             <div className="chat-input-icons">
-                <p></p>
+            <div>
+            <Icon
+                icon={ICONS.MICROPHONE}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
+            </div>
+            <div>
+            <Icon
+                icon={ICONS.PAPERCLIP}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
+            </div>
+            <div>
+            <Icon
+                icon={ICONS.EMOJI}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
+            </div>
             </div>
 
             <input
@@ -17,7 +44,12 @@ const ChatInput = () => {
             />
 
             <button>
-                Send
+            <Icon
+                icon={ICONS.PAPERPLANE}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
             </button>
         </div>
     )

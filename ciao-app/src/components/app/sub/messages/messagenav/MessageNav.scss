@@ -7,6 +7,10 @@
         padding-left: 2.2rem;
         color: white;
         font-size: 1.5rem;
+        svg{
+            height: 1rem;
+            width: 1rem;
+        }
 
     }
     // button{
@@ -28,9 +32,10 @@
 .message-nav-container{
     a:last-child{
     background: #D24243;
-    height: 20px;
-    width: 400px;
-    padding: 5px;
+    height: 40px;
+    
+    // width: 400px;
+    // padding: 5px;
     margin-left: 20px;
     border-radius: 20px;
 }

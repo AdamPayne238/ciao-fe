@@ -4,6 +4,10 @@ import EmptyProfilePic from '../../../../../images/empty-profile.png'
 // Styles
 import './ChatNav.scss'
 
+//SVG
+import Icon from '../../../../../global/Icon'
+import { ICONS } from '../../../../../global/IconConstants'
+
 const ChatNav = () => {
     return(
         <div className="chat-nav-container">
@@ -27,9 +31,24 @@ const ChatNav = () => {
                 </div>
 
             <div className="nav-buttons">
-                <a href="#">0</a>
-                <a href="#">0</a>
-                <a href="#">0</a>
+            <Icon
+                icon={ICONS.PHONE}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
+            <Icon
+                icon={ICONS.VIDEO}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
+            <Icon
+                icon={ICONS.DOTS}
+                width={32}
+                height={32}
+                color="#BEBECA"
+            />
             </div>
 
 
