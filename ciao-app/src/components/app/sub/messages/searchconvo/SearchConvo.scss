@@ -1,14 +1,13 @@
 .search-convo-container{
-    // border: 2px solid white;
+    display: flex;
+    align-items: center;
     margin-left: 2.2rem;
     margin-top: 15px;
     height: 4rem;
     border-radius: 20px 0 0 20px;
-    // display: flex;
-    // flex-direction: column;
     background: #1F2032;
     svg{
-        margin-top: 2rem;
+        // margin-top: 2rem;
         margin-left: 2rem;
         position: absolute;
     }
@@ -16,8 +15,6 @@
         width: 100%;
         height: 3rem;
         font-size: 1.2rem;
-        margin: 15px 0;
-        // border-radius: 20px 0 0 20px;
         border: #1F2032;
         background: #1F2032;
         color: #3F4152;

@@ -12,30 +12,41 @@ const ChatInput = () => {
         <div className="chat-input-container">
 
             <div className="chat-input-icons">
-            <div>
-            <Icon
-                icon={ICONS.MICROPHONE}
-                width={32}
-                height={32}
-                color="#BEBECA"
-            />
-            </div>
-            <div>
-            <Icon
-                icon={ICONS.PAPERCLIP}
-                width={32}
-                height={32}
-                color="#BEBECA"
-            />
-            </div>
-            <div>
-            <Icon
-                icon={ICONS.EMOJI}
-                width={32}
-                height={32}
-                color="#BEBECA"
-            />
-            </div>
+
+                <div>
+                    <a href="#">
+                        <Icon
+                            icon={ICONS.MICROPHONE}
+                            width={32}
+                            height={32}
+                            color=
+                            "#BEBECA"
+                        />
+                    </a>
+                </div>
+
+                <div>
+                    <a href="#">
+                        <Icon
+                            icon={ICONS.PAPERCLIP}
+                            width={32}
+                            height={32}
+                            color="#BEBECA"
+                        />
+                    </a>
+                </div>
+
+                <div>
+                    <a href="#">
+                        <Icon
+                            icon={ICONS.EMOJI}
+                            width={32}
+                            height={32}
+                            color="#BEBECA"
+                        />
+                    </a>
+                </div>
+
             </div>
 
             <input
