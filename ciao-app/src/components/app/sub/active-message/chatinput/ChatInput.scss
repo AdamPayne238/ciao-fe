@@ -1,13 +1,15 @@
 .chat-input-container{
     // border: 2px solid blanchedalmond;
     background: #282C47;
-    height: 7%;
-    width: 90%;
+    height: 8%;
+    width: 94%;
     margin: auto;
     border-radius: 1.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .chat-input-icons{ 
+        margin-left: 1rem;
         display: flex;
         justify-content: center;
         line-height: 20px;
@@ -21,7 +23,7 @@
     }
 
     input{
-        width: 75%;
+        width: 80%;
         background: #282C47 ;
         border: #282C47;
         font-size: 1.6rem;
@@ -37,25 +39,33 @@
       }
     
     button{
-        margin-top: 0.5rem;
-        margin-right: 2rem;
+        margin-right: 1rem;
         text-align: center;
-        height: 3rem;
-        width: 3rem;
+        height: 3.5rem;
+        width: 4rem;
         background: #D74344;
         border: #D74344;
-        border-radius: 60%;
+        border-radius: 0;
+        border-radius: 50%;
         color: white;
-        font-size: 1rem;
         cursor: pointer;
         svg{
-            height: 1.5rem;
-            width: 1.5rem;
+            height: 2rem;
+            width: 2rem;
+            position: relative;
+            left: 29%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+          
         }
     }
 }
 
-// REMOVE INPUT HIGHLIGHTING
+// REMOVE HIGHLIGHTING
 input:focus{
     outline: none;
+}
+button:focus{
+        outline: none;
 }

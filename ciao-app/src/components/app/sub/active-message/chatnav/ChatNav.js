@@ -12,25 +12,25 @@ const ChatNav = () => {
     return(
         <div className="chat-nav-container">
 
+            <div className="flex">
             <div className="chat-nav-img">
             <img src={EmptyProfilePic} />
-            
+            </div>
 
             <div className="chat-nav-name-activity">
-                <div>
+                
                     <p>
-                    Name
+                    Random User
                     </p>
-                </div>
-                <div>
+                
+                
                     <p>
                     Active
                     </p>
                 </div>
                 </div>
-                </div>
-
             <div className="nav-buttons">
+            
             <Icon
                 icon={ICONS.PHONE}
                 width={32}
@@ -52,8 +52,8 @@ const ChatNav = () => {
             </div>
 
 
-
         </div>
+        
     )
 }
 

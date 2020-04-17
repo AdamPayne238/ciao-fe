@@ -18,17 +18,17 @@ const Message = () => {
         <div className="message-img-name-container">
           <div className="message-stack-name">
             <p>
-              name
+              Random User
             </p>
           </div>
           <div className="message-stack-preview">
             <p>
-              recents message prev......
+              recent message...
             </p>
           </div>
         </div>
 
-          <div className="message-stack-last">
+          <div className="message-stack-time">
             <p>5 min</p>
           </div>
 
