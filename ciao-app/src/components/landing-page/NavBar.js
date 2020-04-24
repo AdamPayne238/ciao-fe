@@ -1,51 +1,24 @@
 import React from "react"
 import {Link} from 'react-router-dom'
-import styled from 'styled-components'
+
+//Styles
+import './LandingPage.scss'
 
 const NavBar = () => {
     return(
-        <NavContainer className="navbar">
-            <LogoDiv className="logo">
+        <div className="landing-nav-container">
+            <div className="logo-div">
                 <h1>LOGO</h1>
-            </LogoDiv>
-            <LinkDiv className="link">
-                <Link to="/">Home</Link>
-                <Link to="/features">Features</Link>
-                <Link to='/register'>Register</Link>
-                <Link to='/login'>Login</Link>
-            </LinkDiv>
-        </NavContainer>
+            </div>
+            <div className="link-div">
+                <Link to="/home">Home</Link>
+                <Link to="/home/features">Features</Link>
+                <Link to='/home/register'>Register</Link>
+                <Link to='/home/login'>Login</Link>
+            </div>
+        </div>
     )
 }
 
 export default NavBar
 
-// Styling
-const NavContainer = styled.div`
-    border-bottom: 1px dashed black;
-    display: flex;
-    justify-content: space-between;
-    
-`
-const LogoDiv = styled.div`
-    flex-direction: flex-start;
-    max-width: 30%;
-    margin:auto;
-
-`
-const LinkDiv = styled.div`
-    text-align: center;
-    margin:auto;
-    width: 45%;
-    flex-direction: flex-end;
-    a{
-        text-decoration: none;
-        color: white;
-        font-size: 1.5rem;
-        font-family: 'Baloo Da 2';
-        // padding: 10%;
-        padding-left: 5%;
-        padding-right: 5%;
-
-    }
-`

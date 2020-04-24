@@ -1,13 +1,61 @@
-.login-container{
-    width: 2rem;
-    position: absolute;
-    margin-left: 60rem;
-    margin-top: 22rem;
+.auth-form-container{
+    margin: auto;
+    background: #E1463E;
+    padding: 1rem 3rem 1rem 3rem;
+    border: 1rem solid #181926;
+    border-radius: 45px;
+
+        .auth-header{
+            h1{
+                text-align: center;
+                font-size: 2.5rem;
+                color: #181926;
+            }
+        }
+    
+        input{
+            width: 25rem;
+            height: 3.5rem;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            border-radius: 15px;
+            border: none;
+            text-align: center;
+            transition: 0.2s ease-in;
+            background: #1F2032;
+            font-size: 1.8rem;
+            &:hover {
+                color: white;
+                background: #282C47;
+                }
+            }
+        
+        .auth-mutation{
+            width: 15rem;
+            margin: auto;
+            button{
+                width: 15rem;
+                height: 3rem;
+                font-size: 1.2rem;
+                margin: 15px 0;
+                border-radius: 45px;
+                border: 2px solid black;
+                text-align: center;
+                transition: 0.2s ease-in;
+                background: #1F2032;
+                font-size: 1.8rem;
+                &:hover {
+                    color: white;
+                    background: #282C47;
+                    }
+            }
+        }
+
 }
 
-.register-container{
-    width: 2rem;
-    position: absolute;
-    margin-left: 60rem;
-    margin-top: 22rem;
+.re-route-auth{
+    font-size: 1.5rem;
+    text-align: center;
 }
+
+
