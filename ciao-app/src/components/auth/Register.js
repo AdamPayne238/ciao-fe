@@ -72,7 +72,7 @@ const Register = (props) => {
                 placeholder="Password"
             />
             </div>
-            {/* <div>
+            <div>
             <input
                 value={city}
                 onChange={e => setCity( e.target.value )}
@@ -87,7 +87,7 @@ const Register = (props) => {
                 type="text"
                 placeholder="State"
             />
-            </div> */}
+            </div>
             <div className="auth-mutation">
                 <Mutation
                     mutation={REGISTER_MUTATION}

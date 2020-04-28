@@ -14,11 +14,10 @@ const LandingPage = () => {
     return(
         <div className="landing-page-container">
             <NavBar />
-            <Route path="/home/login" component={Login} />
-            <Route path="/home/register" component={Register} />
-            <Route path="/home/features" component={Features} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/features" component={Features} />
         </div>
-        
     )
 }
 

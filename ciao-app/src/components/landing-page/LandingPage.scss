@@ -10,14 +10,19 @@
 
 // NavBar
 .landing-nav-container{
-    border-bottom: 1px dashed black;
+    border-bottom: 0.5rem solid #181926;
     display: flex;
     justify-content: space-between;
+    height: 6rem;
+    // background: #E1463E;
 
     .logo-div{
         flex-direction: flex-start;
         width: 30%;
         margin:auto;
+        h1{
+            color: #E1463E;
+        }
     }
 
     .link-div{

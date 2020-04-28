@@ -8,13 +8,13 @@ const NavBar = () => {
     return(
         <div className="landing-nav-container">
             <div className="logo-div">
-                <h1>LOGO</h1>
+                <h1>Ciao</h1>
             </div>
             <div className="link-div">
-                <Link to="/home">Home</Link>
-                <Link to="/home/features">Features</Link>
-                <Link to='/home/register'>Register</Link>
-                <Link to='/home/login'>Login</Link>
+                <Link to="/">Home</Link>
+                <Link to="/features">Features</Link>
+                <Link to='/register'>Register</Link>
+                <Link to='/login'>Login</Link>
             </div>
         </div>
     )

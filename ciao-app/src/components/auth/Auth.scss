@@ -9,7 +9,7 @@
             h1{
                 text-align: center;
                 font-size: 2.5rem;
-                color: #181926;
+                color: #1F2032;
             }
         }
     
@@ -24,11 +24,20 @@
             transition: 0.2s ease-in;
             background: #1F2032;
             font-size: 1.8rem;
+            color: white;
             &:hover {
+                text-decoration: none;
                 color: white;
                 background: #282C47;
                 }
             }
+            input::placeholder{
+                color: #6A6C84;
+                font-size: 2rem;
+                &:hover{
+                    color: white;
+                }
+              }
         
         .auth-mutation{
             width: 15rem;
@@ -44,8 +53,8 @@
                 transition: 0.2s ease-in;
                 background: #1F2032;
                 font-size: 1.8rem;
+                color: #6A6C84;
                 &:hover {
-                    color: white;
                     background: #282C47;
                     }
             }
@@ -57,5 +66,4 @@
     font-size: 1.5rem;
     text-align: center;
 }
-
 

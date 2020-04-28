@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 // EXTRA IMPORTS
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, useLocation} from 'react-router-dom'
 
 // Components
 import PrivateRoute from './components/auth/PrivateRoute'
@@ -10,10 +10,17 @@ import LandingPage from './components/landing-page/LandingPage'
 import Ciao from './components/app/Ciao'
 
 function App() {
+
+  let { pathname } = useLocation();
+
   return (
     <div className="App">
-      <Route path="/home" component={LandingPage} />
-      <PrivateRoute path='/ciao' component={Ciao} /> 
+
+      {pathname.includes('/') && !pathname.includes('/ciao') && (
+      <Route path="/" component={LandingPage} />
+      )}
+      <PrivateRoute exact path='/ciao' component={Ciao} /> 
+      
     </div>
   )
 }
