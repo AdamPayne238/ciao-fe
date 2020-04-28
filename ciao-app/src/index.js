@@ -17,10 +17,10 @@ import { setContext } from 'apollo-link-context'
 // import { getMainDefinition } from 'apollo-utilities'
 
 const AUTH_TOKEN = process.env.AUTH_TOKEN
-const BACKEND = process.env.BACKEND
+// const BACKEND = process.env.BACKEND
 
 const httpLink = createHttpLink({
-  uri: BACKEND
+  uri: 'http://localhost:4500/'
 })
 
 const authLink = setContext((_, {headers}) => {

@@ -19,7 +19,7 @@ function App() {
       {pathname.includes('/') && !pathname.includes('/ciao') && (
       <Route path="/" component={LandingPage} />
       )}
-      <PrivateRoute exact path='/ciao' component={Ciao} /> 
+      <PrivateRoute path='/ciao' component={Ciao} /> 
       
     </div>
   )

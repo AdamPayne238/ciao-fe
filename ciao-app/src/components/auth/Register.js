@@ -22,8 +22,6 @@ const Register = (props) => {
     const [ last_name, setLastName ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
-    const [ city, setCity ] = useState('')
-    const [ state, setState ] = useState('')
 
     const confirm = async data => {
         const {token} = data.register
@@ -72,26 +70,11 @@ const Register = (props) => {
                 placeholder="Password"
             />
             </div>
-            <div>
-            <input
-                value={city}
-                onChange={e => setCity( e.target.value )}
-                type="text"
-                placeholder="City"
-            />
-            </div>
-            <div>
-            <input
-                value={state}
-                onChange={e => setState( e.target.value )}
-                type="text"
-                placeholder="State"
-            />
-            </div>
+
             <div className="auth-mutation">
                 <Mutation
                     mutation={REGISTER_MUTATION}
-                    variables={{ first_name, last_name, email, password, city, state}}
+                    variables={{ first_name, last_name, email, password}}
                     onCompleted={data => confirm(data)}
                 >
                     {mutation => (
@@ -102,7 +85,7 @@ const Register = (props) => {
                 </Mutation>
             </div>
             <div className="re-route-auth">
-            <p>Already have an account? <Link to="/home/login">Login</Link></p>
+            <p>Already have an account? <Link to="/login">Login</Link></p>
             </div>
         </div>
     )
