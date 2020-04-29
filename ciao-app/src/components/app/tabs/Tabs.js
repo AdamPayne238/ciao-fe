@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
-import EmptyProfilePic from '../../../../images/empty-profile.png'
+import EmptyProfilePic from '../../../images/empty-profile.png'
 
 // SVG
-import Icon from '../../../../global/Icon'
-import { ICONS } from '../../../../global/IconConstants'
+import Icon from '../../../global/Icon'
+import { ICONS } from '../../../global/IconConstants'
 
 // Styling
 import './Tabs.scss'
@@ -29,7 +29,7 @@ const Tabs = () => {
                 <h2>Hello, User</h2>
             </div>
 
-            <NavLink to="/home" activeClassName='active'>
+            <NavLink to="/ciao/home" activeClassName='active'>
                 <div className="tab-row">
                     <Icon
                         icon={ICONS.HOME}
@@ -43,7 +43,7 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/messages">
+            <NavLink to="/ciao/messages">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.BUBBLE}
@@ -57,7 +57,7 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/contacts">
+            <NavLink to="/ciao/contacts">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.NOTEBOOK}
@@ -71,7 +71,7 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/notifications">
+            <NavLink to="/ciao/notifications">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.BELL}
@@ -85,7 +85,7 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/settings">
+            <NavLink to="/ciao/settings">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.SETTINGS}

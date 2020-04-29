@@ -1,12 +1,29 @@
 import React from "react"
+import { Switch, Route, Redirect, useLocation} from 'react-router-dom'
+
+import Home from '../landing-page/Home'
+import NavBar from '../landing-page/NavBar'
+import Login from '../auth/Login'
+import Register from '../auth/Register'
+import Features from '../landing-page/Features'
+
+//Styles
+import './LandingPage.scss'
 
 const LandingPage = () => {
+
+    let { pathname } = useLocation();
     
     return(
-        <div>
-          
+        <div className="landing-page-container">
+            <NavBar />
+            <Route exact path="/" component={Home} />
+            <Route path="/features" component={Features} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+    
+
         </div>
-        
     )
 }
 

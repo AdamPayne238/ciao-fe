@@ -1,7 +1,7 @@
 import React from 'react'
-import Tabs from './sub/tabs/Tabs'
-import Messages from './sub/messages/Messages'
-import ActiveMessage from './sub/active-message/ActiveMessage'
+import Tabs from './tabs/Tabs'
+import Messages from './messages-tab/messages/Messages'
+import ActiveMessage from './messages-tab/active-message/ActiveMessage'
 
 import './Ciao.scss'
 

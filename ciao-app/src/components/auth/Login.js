@@ -1,10 +1,11 @@
 import React, { useState} from "react"
+import {Link} from 'react-router-dom'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 import {AUTH_TOKEN} from '../../constants'
 
+
 //style
-import styled from 'styled-components'
 import './Auth.scss'
 
 const LOGIN_MUTATION = gql`
@@ -32,9 +33,12 @@ const Login = (props) => {
     }
 
     return(
-        <div className="login-container">
+        <div className="auth-form-container">
+            <div className="auth-header">
+                <h1>Login</h1>
+            </div>
             <div>
-                <Input
+                <input
                     value={email}
                     onChange={e => setEmail( e.target.value )}
                     type="text"
@@ -42,72 +46,31 @@ const Login = (props) => {
                 />
             </div>
             <div>
-                <Input
+                <input
                     value={password}
                     onChange={e => setPassword( e.target.value )}
                     type="text"
                     placeholder="Password"
                 />
             </div>
-            <div className="login-mutation">
+            <div className="auth-mutation">
             <Mutation
                 mutation={LOGIN_MUTATION}
                 variables={{ email, password }}
                 onCompleted={data => confirm(data)}
             >
                     {mutation => (
-                    <Button onClick={mutation}>
+                    <button onClick={mutation}>
                         {'login'}
-                    </Button>
+                    </button>
                     )}
                 </Mutation>
+            </div>
+            <div className="re-route-auth">
+            <p>Don't have an account? <Link to="/home/register">Register</Link></p>
             </div>
         </div>
     )
 }
 
 export default Login
-
-//Styles
-const LoginContainer = styled.div`
-// width: 1rem;
-min-height: 88vh;
-margin: 30px auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
-const Input = styled.input`
-  width: 25rem;
-  height: 2.75rem;
-  font-size: 1.2rem;
-  margin: 15px 0;
-  border-radius: 7px;
-  border: 2px solid black;
-  text-align: center;
-  transition: 0.2s ease-in;
-  &:hover {
-    color: white;
-    background: black;
-  }
-`
-
-const Button = styled.button`
-  width: 50%;
-  height: 40px;
-  border: 2px solid black;
-  border-radius: 20px;
-  font-size: 1.2rem;
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  transition: 0.2 s ease-in;
-  margin-top: 15px;
-  background: white;
-
-  &:hover {
-    color: white;
-    background: black;
-  }
-`
