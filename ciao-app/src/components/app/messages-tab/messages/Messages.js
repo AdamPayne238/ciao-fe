@@ -4,14 +4,26 @@ import SearchConvo from './searchconvo/SearchConvo'
 import MessageNav from './messagenav/MessageNav'
 import './Messages.scss'
 
+import { useLocation } from 'react-router-dom'
+
 const Messages = () => {
 
+    let { pathname } = useLocation()
+
     return(
-        <div className="messages-container">
-            <SearchConvo />
-            <MessageNav />
-            <Message />
-        </div>
+        <>
+            {pathname.includes('/ciao/messages') && (
+                <div className="messages-container">
+            
+                    <SearchConvo />
+                    <MessageNav />
+                    <Message />
+              
+                </div>
+            )}
+        </>
+         
+     
     )
 }
 
