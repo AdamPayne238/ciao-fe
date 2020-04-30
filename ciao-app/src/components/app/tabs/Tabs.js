@@ -48,7 +48,7 @@ const Tabs = () => {
                 <Icon
                         icon={ICONS.BUBBLE}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/messages') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/messages') ? '#FB2046' : '#FB2046'}>
@@ -62,7 +62,7 @@ const Tabs = () => {
                 <Icon
                         icon={ICONS.NOTEBOOK}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/contacts') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
@@ -76,7 +76,7 @@ const Tabs = () => {
                 <Icon
                         icon={ICONS.BELL}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/notifications') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/notifications') ? '#FB2046' : '#FB2046'}>
@@ -90,7 +90,7 @@ const Tabs = () => {
                 <Icon
                         icon={ICONS.SETTINGS}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/settings') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/settings') ? '#FB2046' : '#FB2046'}>

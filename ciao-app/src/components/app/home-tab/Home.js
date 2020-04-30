@@ -9,14 +9,13 @@ const Home = () => {
 
     return(
         <>
-
-        {pathname.includes('/ciao/home') && (
-            <div className="home-backdrop">
-            <h1>Home</h1>
-            </div>
-        )}
-   
-
+            {pathname.includes('/ciao/home') && (
+                <div className="home-backdrop">
+                    <div className="home-container">
+                        <h1>Home Tab Coming Soon....</h1>
+                    </div>
+                </div>
+            )}
         </>
     )
 }

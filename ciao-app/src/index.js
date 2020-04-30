@@ -20,7 +20,7 @@ const AUTH_TOKEN = process.env.AUTH_TOKEN
 // const BACKEND = process.env.BACKEND
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4500/'
+  uri: 'https://ciao-be-2.herokuapp.com/'
 })
 
 const authLink = setContext((_, {headers}) => {

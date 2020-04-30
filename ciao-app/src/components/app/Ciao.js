@@ -3,8 +3,12 @@ import Tabs from './tabs/Tabs'
 import Messages from './messages-tab/messages/Messages'
 import ActiveMessage from './messages-tab/active-message/ActiveMessage'
 import Home from './home-tab/Home'
+import Contacts from './contacts-tab/Contacts'
+import Notifications from './notifications-tab/Notifications'
+import Settings from './settings-tab/Settings'
 
 import './Ciao.scss'
+
 
 const Ciao = () => {
 
@@ -17,6 +21,12 @@ const Ciao = () => {
 
             <Messages />
             <ActiveMessage />
+
+            <Contacts />
+
+            <Notifications />
+
+            <Settings />
             
         </div>
     )
