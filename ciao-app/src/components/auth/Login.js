@@ -67,7 +67,7 @@ const Login = (props) => {
                 </Mutation>
             </div>
             <div className="re-route-auth">
-            <p>Don't have an account? <Link to="/home/register">Register</Link></p>
+            <p>Don't have an account? <Link to="/register">Register</Link></p>
             </div>
         </div>
     )
