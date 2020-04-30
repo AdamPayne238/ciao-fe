@@ -4,7 +4,7 @@ import './Message.scss'
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 
 const Message = () => {
-    var message = ["message1", "message2", "message3", "message4", "message5", "message6", "message7"]
+    var message = ["message1", "message2", "message3", "message4", "message5", "message6", "message7", "message8", "message9", "message10", "message11", "message12", "message13", "message14", "message15"]
     return(
       <div className="message-container">
         {message.map(() => 
