@@ -1,0 +1,26 @@
+.message-nav-container{
+    height: 3rem;
+    display: flex;
+   
+    // justify-content: flex-start;
+    justify-content: space-evenly;
+    
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        svg{
+            background: #D24243;
+            border: 0.5rem solid #D24243;
+            border-radius: 10px;
+            height: 1rem;
+            width: 1rem;
+        }
+
+    }
+}
+
+.active-sub{   
+    border-bottom: 4px solid #D24243;
+}

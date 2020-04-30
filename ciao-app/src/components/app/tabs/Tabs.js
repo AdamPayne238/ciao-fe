@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
-import EmptyProfilePic from '../../../../images/empty-profile.png'
+import EmptyProfilePic from '../../../images/empty-profile.png'
 
 // SVG
-import Icon from '../../../../global/Icon'
-import { ICONS } from '../../../../global/IconConstants'
+import Icon from '../../../global/Icon'
+import { ICONS } from '../../../global/IconConstants'
 
 // Styling
 import './Tabs.scss'
@@ -29,7 +29,7 @@ const Tabs = () => {
                 <h2>Hello, User</h2>
             </div>
 
-            <NavLink to="/home" activeClassName='active'>
+            <NavLink to="/ciao/home" activeClassName='active'>
                 <div className="tab-row">
                     <Icon
                         icon={ICONS.HOME}
@@ -43,12 +43,12 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/messages">
+            <NavLink to="/ciao/messages">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.BUBBLE}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/messages') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/messages') ? '#FB2046' : '#FB2046'}>
@@ -57,12 +57,12 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/contacts">
+            <NavLink to="/ciao/contacts">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.NOTEBOOK}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/contacts') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
@@ -71,12 +71,12 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/notifications">
+            <NavLink to="/ciao/notifications">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.BELL}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/notifications') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/notifications') ? '#FB2046' : '#FB2046'}>
@@ -85,12 +85,12 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/settings">
+            <NavLink to="/ciao/settings">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.SETTINGS}
                         width={32}
-                        height={36}
+                        height={32}
                         color={pathname.includes('/settings') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/settings') ? '#FB2046' : '#FB2046'}>
