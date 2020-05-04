@@ -61,43 +61,6 @@ const Conversation = () => {
 
     </ul>
         
-        // <div className="conversation-container">
-            
-        // <ul>
-        //     <div className="user-one">
-        //         <p>Hey how's it going?</p>
-        //     </div>
-        // </ul>
-
-        //     <div className="user-one">
-        //     <p>Wanna play COD tonight?</p>
-        //     </div>
-
-        //     <div className="user-two">
-        //     <p>Yea I'm down. Just finishing up at work.</p>
-        //     </div>
-
-        //     <div className="user-one">
-        //     <p>Great! Hit me up when you get home</p>
-        //     </div>
-
-        //     <div className="user-two">
-        //     <p>Will do!</p>
-        //     </div>
-
-        //     <div className="user-two">
-        //     <p>Shouldn't be take too long to get home</p>
-        //     </div>
-
-        //     <div className="user-one">
-        //     <p>Sounds good!</p>
-        //     </div>
-        
-
-          
-
-            
-        // </div>
     )
 }
 
