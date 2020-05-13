@@ -18,7 +18,6 @@ const Messages = () => {
                     <SearchConvo />
                     <MessageNav />
                     <Message />
-              
                 </div>
             )}
         </>
