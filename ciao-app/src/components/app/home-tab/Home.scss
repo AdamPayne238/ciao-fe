@@ -5,10 +5,7 @@
     width: 100%;
     border-radius: 0 55px 55px 0;
     padding-right: 15px;
-    h1{
-        padding: 4rem;
-        color: white;
-    }
+
     .home-container{
         // border-left: 15px solid lime;
         background: #1F2032;
@@ -19,5 +16,40 @@
         border-radius: 0 45px 45px 0;
         display: flex;
         flex-direction: column;
+
+        p{
+            color: white;
+        }
+
+        .ciao-home-profile-pic{
+            border: 2px solid yellow;
+            border-radius: 50%;
+            width: 15rem;
+            height: 15rem;
+        }
+
+        .ciao-home-bio{
+            border: 2px solid lime;
+    
+        }
+
+        .ciao-home-status{
+            border: 2px solid turquoise;
+  
+        }
+
+        .ciao-home-friend-count{
+            border: 2px solid hotpink;
+  
+        }
+
+        .ciao-home-member-date{
+            border: 2px solid fuchsia;
+
+        }
+
+
     }
+
 }
+
