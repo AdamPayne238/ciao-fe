@@ -13,6 +13,11 @@ const Home = () => {
                 <div className="home-backdrop">
                     <div className="home-container">
                         <h1>Home Tab Coming Soon....</h1>
+                        <div>Update Profile Pic</div>
+                        <div>Update Bio</div>
+                        <div>Update Status</div>
+                        <div>Friend Count</div>
+                        <div>Member Since..</div>
                     </div>
                 </div>
             )}
