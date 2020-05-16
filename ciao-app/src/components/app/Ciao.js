@@ -15,6 +15,10 @@ const Ciao = () => {
     return(
         <div className="ciao-container">
 
+            {/* <div className="ciao-logo">
+                <h1>Ciao</h1>
+            </div> */}
+
             <Tabs />
 
             <Home />
