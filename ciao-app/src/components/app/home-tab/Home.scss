@@ -7,7 +7,6 @@
     padding-right: 15px;
 
     .home-container{
-        // border-left: 15px solid lime;
         background: #1F2032;
         background-image: linear-gradient(to right, #181926 , #1F2032);
         width: 100%;
@@ -19,34 +18,54 @@
 
         p{
             color: white;
+            font-size: 1.5rem;
+        }
+        h2{
+            color: white;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        h1{
+            font-size: 4rem;
+            font-weight: bolder;
+            margin: 0;
+            color: white;
         }
 
-        .ciao-home-profile-pic{
-            border: 2px solid yellow;
-            border-radius: 50%;
-            width: 15rem;
-            height: 15rem;
+        .ciao-home-info-container{
+            margin: 3rem;
+            border-bottom: 4px solid white;
+            
+
+            .ciao-home-username{
+                // border: 2px solid blue;
+            }
+
+            .ciao-home-friend-count{
+                // border: 2px solid hotpink;
+    
+            }
+
+            .ciao-home-member-date{
+                // border: 2px solid fuchsia;
+
+            }
+
         }
 
         .ciao-home-bio{
-            border: 2px solid lime;
+            margin: 3rem;
+            // border: 2px solid lime;
     
         }
 
         .ciao-home-status{
-            border: 2px solid turquoise;
+            margin: 3rem;
+            // border: 2px solid turquoise;
   
         }
 
-        .ciao-home-friend-count{
-            border: 2px solid hotpink;
-  
-        }
 
-        .ciao-home-member-date{
-            border: 2px solid fuchsia;
-
-        }
 
 
     }
