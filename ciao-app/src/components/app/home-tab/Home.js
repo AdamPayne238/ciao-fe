@@ -68,6 +68,16 @@ const Home = () => {
                                     <p>LinkedIn</p>
                                 </div>
 
+                                <div className="ciao-home-twitter">
+                                    <Icon
+                                        icon={ICONS.TWITTER}
+                                        width={32}
+                                        height={32}
+                                        color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
+                                    />
+                                    <p>Twitter</p>
+                                </div>
+
                                 <div className="ciao-home-email">
                                     <Icon
                                         icon={ICONS.EMAIL2}
