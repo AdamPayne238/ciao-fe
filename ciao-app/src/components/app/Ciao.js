@@ -13,26 +13,28 @@ import './Ciao.scss'
 const Ciao = () => {
 
     return(
-        <div className="ciao-container">
-
-            {/* <div className="ciao-logo">
+        <>
+            <div className="ciao-logo">
                 <h1>Ciao</h1>
-            </div> */}
-
-            <Tabs />
-
-            <Home />
-
-            <Messages />
-            <ActiveMessage />
-
-            <Contacts />
-
-            <Notifications />
-
-            <Settings />
+            </div>
             
-        </div>
+            <div className="ciao-container">
+
+                <Tabs />
+
+                <Home />
+
+                <Messages />
+                <ActiveMessage />
+
+                <Contacts />
+
+                <Notifications />
+
+                <Settings />
+                
+            </div>
+        </>
     )
 }
 

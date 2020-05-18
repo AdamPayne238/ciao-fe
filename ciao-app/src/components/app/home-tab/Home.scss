@@ -1,6 +1,5 @@
 
 .home-backdrop{
-    // border: 2px solid blueviolet;
     background: #171926;
     width: 100%;
     border-radius: 0 55px 55px 0;
@@ -15,54 +14,99 @@
         border-radius: 0 45px 45px 0;
         display: flex;
         flex-direction: column;
+        overflow-x: hidden;
 
         p{
             color: white;
             font-size: 1.5rem;
         }
         h2{
+            font-family: 'Arimo', sans-serif;
             color: white;
             font-size: 2rem;
             font-weight: bolder;
         }
-        h1{
-            font-size: 4rem;
-            font-weight: bolder;
-            margin: 0;
-            color: white;
-        }
+
 
         .ciao-home-info-container{
-            margin: 3rem;
-            border-bottom: 4px solid white;
+            margin: 2rem 3rem 3rem 3rem;
+            
+
+     
+      
+
+            .ciao-home-underline{
+                border-bottom: 4px solid white;
+                margin: 3rem 0 3rem 0;
+            }
+        
             
 
             .ciao-home-username{
-                // border: 2px solid blue;
+
+                h1{
+                    font-family: 'Anton', sans-serif;
+                    text-align: left;
+                    font-size: 3rem;
+                    margin: 0;
+                    color: white;
+                }
             }
 
             .ciao-home-friend-count{
                 // border: 2px solid hotpink;
+                // p{
+                //     margin: 1rem 0 1rem 0;
+                // }
     
             }
 
             .ciao-home-member-date{
                 // border: 2px solid fuchsia;
+                // p{
+                //     margin: 1rem 0 1rem 0;                
+                // }
 
             }
 
         }
 
         .ciao-home-bio{
-            margin: 3rem;
+       
             // border: 2px solid lime;
     
         }
 
         .ciao-home-status{
-            margin: 3rem;
+          
             // border: 2px solid turquoise;
   
+        }
+
+        .ciao-home-svg-contact{
+            margin-top: 3rem;
+            
+            .ciao-home-github{
+                display: flex;
+            }
+            
+            .ciao-home-linkedin{
+                display: flex;
+            }
+
+            .ciao-home-twitter{
+                display: flex;
+            }
+
+            .ciao-home-email{
+                display: flex;
+            }
+
+            svg{
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+
         }
 
 
@@ -71,4 +115,9 @@
     }
 
 }
+
+// Hide vertical scrollbar
+.home-container::-webkit-scrollbar {
+    display: none;
+  }
 
