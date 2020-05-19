@@ -13,10 +13,8 @@ import './Ciao.scss'
 const Ciao = () => {
 
     return(
-        <>
-            <div className="ciao-logo">
-                <h1>Ciao</h1>
-            </div>
+     
+      
             
             <div className="ciao-container">
 
@@ -34,7 +32,7 @@ const Ciao = () => {
                 <Settings />
                 
             </div>
-        </>
+    
     )
 }
 
