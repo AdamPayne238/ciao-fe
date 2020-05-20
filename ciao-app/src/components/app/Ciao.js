@@ -9,13 +9,26 @@ import Settings from './settings-tab/Settings'
 
 import './Ciao.scss'
 
+// SVG
+import Icon from '../../global/Icon'
+import { ICONS } from '../../global/IconConstants'
+
+import { useLocation } from 'react-router-dom'
+
 
 const Ciao = () => {
+
+    let { pathname } = useLocation()
 
     return(
         <>
             <div className="ciao-logo">
-                
+                <Icon
+                    icon={ICONS.CIAO}
+                    width={50}
+                    height={36}
+                    color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
+                />
             </div>
 
             <div className="ciao-container">
