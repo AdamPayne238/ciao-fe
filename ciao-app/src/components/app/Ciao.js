@@ -14,8 +14,6 @@ const Ciao = () => {
 
     return(
      
-      
-            
             <div className="ciao-container">
 
                 <Tabs />
