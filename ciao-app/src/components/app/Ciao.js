@@ -27,7 +27,7 @@ const Ciao = () => {
                     icon={ICONS.CIAO}
                     width={50}
                     height={36}
-                    color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
+                    color={pathname.includes('/home') ? '#E1473E' : '#E1473E'}
                 />
             </div>
 
@@ -47,6 +47,16 @@ const Ciao = () => {
                 <Settings />
                 
             </div>
+
+            <div className="ciao-logo-upside">
+                <Icon
+                    icon={ICONS.CIAO}
+                    width={50}
+                    height={36}
+                    color={pathname.includes('/home') ? '#181926' : '#181926'}
+                />
+            </div>
+
 
         </>
     )
