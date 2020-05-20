@@ -1,6 +1,6 @@
 .ciao-container{
     display: flex;
-    height: 52rem;
+    height: 49rem;
     // width: 90rem;
     padding: 4rem;
     padding-right: 4rem;
@@ -9,5 +9,33 @@
 }
 
 .ciao-logo{
+
+    height: 2rem;
+    width: 1rem;
+    // margin-left:140px;
+    // margin-left: 3.5rem;
+    margin-left: 8.8rem;
+    // margin-left: 55rem;
+
+        svg{
+            height: 7rem;
+            width: 7rem;
+        }
+
+}
+
+.ciao-logo-upside{
+    transform: rotate(180deg);
+    height: 2rem;
+    width: 0;
+    // margin-left:140px;
+    // margin-left: 3.5rem;
+    margin-left: 109rem;
+    // margin-left: 55rem;
+
+        svg{
+            height: 7rem;
+            width: 7rem;
+        }
 
 }
