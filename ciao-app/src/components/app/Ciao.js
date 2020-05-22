@@ -48,14 +48,15 @@ const Ciao = () => {
                 
             </div>
 
-            <div className="ciao-logo-upside">
+            {/* Upside down reverse color logo */}
+            {/* <div className="ciao-logo-upside">
                 <Icon
                     icon={ICONS.CIAO}
                     width={50}
                     height={36}
-                    color={pathname.includes('/home') ? '#181926' : '#181926'}
+                    color={pathname.includes('/home') ? '#181926' : '#181926'} // '#181926'
                 />
-            </div>
+            </div> */}
 
 
         </>

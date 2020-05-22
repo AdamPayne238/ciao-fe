@@ -16,12 +16,15 @@
     height: 6rem;
     // background: #E1463E;
 
+
+
     .logo-div{
         flex-direction: flex-start;
         width: 30%;
         margin:auto;
-        h1{
-            color: #E1463E;
+        svg{
+            height: 6rem;
+            width: 6rem;
         }
     }
 
