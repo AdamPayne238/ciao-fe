@@ -1,5 +1,5 @@
 .request-chat-modal-container{
-
+    text-align: center;
     position: absolute;
 	display: flex;
     justify-content: center;
@@ -7,9 +7,72 @@
     flex-direction: column;
     background: #181926;
     border: 1rem solid #E1463E;
-    height: 40rem;
-    width: 35rem;
+    height: 35rem;
+    width: 30rem;
     border-radius: 2rem;
+
+
+    .request-chat-modal-close{
+
+        // border: 1px solid lime;
+        margin: 1rem 3rem 0rem 3rem;
+        display: flex;
+        width: 90%;
+        justify-content: flex-end;
+        
+        button{
+            background: #E1463E;
+            color: #181926;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            height: 2rem;
+            width: 5rem;
+    
+        }
+ 
+
+    }
+
+
+    .request-chat-search-filter{
+    
+        display: flex;
+        align-items: center;
+        margin: 20px 0 10px 0;
+        height: 4rem;
+        width: 24rem;
+        border-radius: 15px;
+        background: #1F2032;
+        // padding-left: 2rem;
+
+        svg{
+            text-decoration: none;
+        }
+
+        input{
+            // text-align: left;
+            text-align: center;
+            // margin-left: .5rem;
+            width: 100%;
+            height: 3rem;
+            font-size: 1.8rem;
+            border-radius: 15px;
+            border: #1F2032;
+            background: #1F2032;
+            color: #3F4152;
+    
+        }
+
+    }
+
+    .request-chat-user-list{
+        overflow-x: hidden;
+    }
 
 }
 
+// Remove Default Scrollbar
+.request-chat-user-list::-webkit-scrollbar {
+    display: none;
+  }
