@@ -20,10 +20,11 @@ const RequestChat = props => {
     const { error, loading, data } = useQuery(GET_USERS)
 
     useEffect(() => {
-        console.log('Request Chat Open?', open)
-        console.log('GET_USERS Response data', data)
-        console.log('Error', error)
-        console.log('Loading', loading)
+        // console.log('Request Chat Open?', open)
+        // console.log('GET_USERS Response data', data)
+        // console.log('Error', error)
+        // console.log('Loading', loading)
+        console.log('select', select)
     }, [open, select])
 
     return (
@@ -69,12 +70,12 @@ const RequestChat = props => {
                     
                 <div className="request-chat-user-list">
                     {data.users.map(info => (
-                        <>
-                            <p>ID:{info.id}</p>
-                            <p>Name: {info.first_name} {info.last_name}</p>
-                            <p>Email: {info.email}</p>
-                            <button onClick={() => select ? setSelect(false) : setSelect(true), console.log("selected", select) }>Request Chat</button>
-                        </>
+                        <div className="request-chat-single-user">
+                            {/* <p>ID:{info.id}</p> */}
+                            <p>{info.first_name} {info.last_name}</p>
+                            <p>{info.email}</p>
+                            <button onClick={() => select ? setSelect(false) : setSelect(info.id)}>Select</button>
+                        </div>
                     ))}
                 </div>
 
