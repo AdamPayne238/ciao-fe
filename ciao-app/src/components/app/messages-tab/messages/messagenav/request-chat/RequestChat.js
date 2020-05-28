@@ -6,14 +6,17 @@ import { useQuery, useMutation } from '@apollo/react-hooks'
 // Queries / Mutations
 import { GET_USERS } from './Resolvers'
 
-//SVG
+// SVG
 import Icon from '../../../../../../global/Icon'
 import { ICONS } from '../../../../../../global/IconConstants'
 
+// Styles
+import './RequestChat.scss'
 
 const RequestChat = props => {
 
     const [ open, setOpen ] = useState(false)
+    const [ select, setSelect ] = useState(false)
     const { error, loading, data } = useQuery(GET_USERS)
 
     useEffect(() => {
@@ -21,7 +24,7 @@ const RequestChat = props => {
         console.log('GET_USERS Response data', data)
         console.log('Error', error)
         console.log('Loading', loading)
-    }, [open])
+    }, [open, select])
 
     return (
         <div>
@@ -38,11 +41,20 @@ const RequestChat = props => {
                 />
             </div>
 
-            {open && (
+            {!loading && data && open && (
+
+                
              
                 <div className="request-chat-modal-container">
-
-                    <h1>CLICKED!!</h1>
+                    <button onClick={() => setOpen(false)}>Close</button>
+                    {data.users.map(info => (
+                        <div>
+                        <p>ID:{info.id}</p>
+                        <p>Name: {info.first_name} {info.last_name}</p>
+                        <p>Email: {info.email}</p>
+                        <button onClick={() => select ? setSelect(false) : setSelect(true), console.log("selected", select) }>Request Chat</button>
+                        </div>
+                    ))}
        
                 </div>
             )}
