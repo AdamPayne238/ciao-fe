@@ -1,5 +1,5 @@
 import React from "react"
-import { Switch, Route, Redirect, useLocation} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import Home from '../landing-page/Home'
 import NavBar from '../landing-page/NavBar'
@@ -11,8 +11,6 @@ import Features from '../landing-page/Features'
 import './LandingPage.scss'
 
 const LandingPage = () => {
-
-    let { pathname } = useLocation();
     
     return(
         <div className="landing-page-container">
@@ -21,8 +19,6 @@ const LandingPage = () => {
             <Route path="/features" component={Features} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-    
-
         </div>
     )
 }

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
 // Queries / Mutations
-import { GET_USERS } from './Resolvers'
+import { GET_USERS, CREATE_CHAT } from './Resolvers'
 
 // SVG
 import Icon from '../../../../../../global/Icon'
@@ -17,13 +17,51 @@ const RequestChat = props => {
 
     const [ open, setOpen ] = useState(false)
     const [ select, setSelect ] = useState(false)
+
+    // Query => Get All Users
     const { error, loading, data } = useQuery(GET_USERS)
 
+    // Mutation => Create Chat
+    const [ requestCreateChat ] = useMutation(CREATE_CHAT)
+
+    const [ submitRequest, setSubmitRequest ] = useState({
+        success: false,
+        message: '',
+    })
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        requestCreateChat({
+            variables: {
+                friend: select
+            }
+        })
+        .then(res => {
+            setSubmitRequest({
+                success: true,
+                message: 'Request sent!'
+            })
+        })
+        .catch(err => {
+            console.log('Request Chat Error', err)
+            setSubmitRequest({
+                success: false,
+                message: 'You have already requested a chat from that user. Please wait for response.'
+            })
+        })
+    }
+
     useEffect(() => {
-        console.log('Request Chat Open?', open)
-        console.log('GET_USERS Response data', data)
-        console.log('Error', error)
-        console.log('Loading', loading)
+
+        // CONSOLE LOGS
+        // console.log('Request Chat Open?', open)
+        // console.log('GET_USERS Response data', data)
+        // console.log('Error', error)
+        // console.log('Loading', loading)
+        console.log('select', select)
+
+        // FUNCTIONALITY
+        
     }, [open, select])
 
     return (
@@ -65,16 +103,17 @@ const RequestChat = props => {
                         type="text"
                         placeholder="Search Email"
                     />
+
                 </div>
                     
                 <div className="request-chat-user-list">
                     {data.users.map(info => (
-                        <>
-                            <p>ID:{info.id}</p>
-                            <p>Name: {info.first_name} {info.last_name}</p>
-                            <p>Email: {info.email}</p>
-                            <button onClick={() => select ? setSelect(false) : setSelect(true), console.log("selected", select) }>Request Chat</button>
-                        </>
+                        <div className="request-chat-single-user">
+                            {/* <p>ID:{info.id}</p> */}
+                            <p>{info.first_name} {info.last_name}</p>
+                            <p>{info.email}</p>
+                            <button onClick={() => select ? setSelect(false) : setSelect(info.id)}>Select</button>
+                        </div>
                     ))}
                 </div>
 

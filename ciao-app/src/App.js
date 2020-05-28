@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 // EXTRA IMPORTS
-import { Switch, Route, Redirect, useLocation} from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 
 // Components
 import PrivateRoute from './components/auth/PrivateRoute'

@@ -6,16 +6,15 @@
     align-items: center;
     flex-direction: column;
     background: #181926;
-    border: 1rem solid #E1463E;
+    border: .8rem solid #E1463E;
     height: 35rem;
     width: 30rem;
     border-radius: 2rem;
 
-
     .request-chat-modal-close{
 
         // border: 1px solid lime;
-        margin: 1rem 3rem 0rem 3rem;
+        margin: 1.5rem 3rem 0rem 3rem;
         display: flex;
         width: 90%;
         justify-content: flex-end;
@@ -39,7 +38,7 @@
     
         display: flex;
         align-items: center;
-        margin: 20px 0 10px 0;
+        margin: 1rem 0 1rem 0;
         height: 4rem;
         width: 24rem;
         border-radius: 15px;
@@ -68,6 +67,29 @@
 
     .request-chat-user-list{
         overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+     
+
+
+        button{
+            background: #E1463E;
+            color: #181926;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            height: 1.5rem;
+            width: 6rem;
+        }
+
+        .request-chat-single-user{
+            border: 0.8rem solid #181926;
+            border-radius: 2rem;
+            width: 15rem;
+            height: 20rem;
+            background: #1F2032; 
+            padding-bottom: 2rem;
+        }
     }
 
 }
