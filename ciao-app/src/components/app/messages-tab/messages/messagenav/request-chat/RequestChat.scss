@@ -6,11 +6,10 @@
     align-items: center;
     flex-direction: column;
     background: #181926;
-    border: 1rem solid #E1463E;
+    border: .8rem solid #E1463E;
     height: 35rem;
     width: 30rem;
     border-radius: 2rem;
-
 
     .request-chat-modal-close{
 
@@ -85,6 +84,7 @@
 
         .request-chat-single-user{
             border: 0.8rem solid #181926;
+            border-radius: 2rem;
             width: 15rem;
             height: 20rem;
             background: #1F2032; 
