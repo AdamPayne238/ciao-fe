@@ -46,16 +46,38 @@ const RequestChat = props => {
                 
              
                 <div className="request-chat-modal-container">
+
+                <div className="request-chat-modal-close">
                     <button onClick={() => setOpen(false)}>Close</button>
+                </div>
+
+                <div className="request-chat-search-filter">
+                    
+                    {/* <Icon
+                        icon={ICONS.SEARCH}
+                        width={32}
+                        height={32}
+                        color="blue"
+                        background="blue"
+                    /> */}
+                    
+                    <input
+                        type="text"
+                        placeholder="Search Email"
+                    />
+                </div>
+                    
+                <div className="request-chat-user-list">
                     {data.users.map(info => (
-                        <div>
-                        <p>ID:{info.id}</p>
-                        <p>Name: {info.first_name} {info.last_name}</p>
-                        <p>Email: {info.email}</p>
-                        <button onClick={() => select ? setSelect(false) : setSelect(true), console.log("selected", select) }>Request Chat</button>
-                        </div>
+                        <>
+                            <p>ID:{info.id}</p>
+                            <p>Name: {info.first_name} {info.last_name}</p>
+                            <p>Email: {info.email}</p>
+                            <button onClick={() => select ? setSelect(false) : setSelect(true), console.log("selected", select) }>Request Chat</button>
+                        </>
                     ))}
-       
+                </div>
+
                 </div>
             )}
 
