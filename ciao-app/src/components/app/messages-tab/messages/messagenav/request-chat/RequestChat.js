@@ -59,10 +59,12 @@ const RequestChat = props => {
         // console.log('Error', error)
         // console.log('Loading', loading)
         console.log('select', select)
+        // console.log("requestCreateChat", requestCreateChat)
+        console.log("Submit Request State", submitRequest)
 
         // FUNCTIONALITY
         
-    }, [open, select])
+    }, [open, select, handleSubmit, submitRequest])
 
     return (
         <div>
@@ -80,8 +82,6 @@ const RequestChat = props => {
             </div>
 
             {!loading && data && open && (
-
-                
              
                 <div className="request-chat-modal-container">
 
@@ -112,7 +112,15 @@ const RequestChat = props => {
                             {/* <p>ID:{info.id}</p> */}
                             <p>{info.first_name} {info.last_name}</p>
                             <p>{info.email}</p>
-                            <button onClick={() => select ? setSelect(false) : setSelect(info.id)}>Select</button>
+                            {select === false && (
+                                <button onClick={() => select ? setSelect(false) : setSelect(info.id)}>Select</button>
+                            )}
+                            {select === info.id && (
+                                <>
+                                <button onClick={handleSubmit}>Submit</button>
+                                <button onClick={() => setSelect(false)}>Cancel</button>
+                                </>
+                            )}
                         </div>
                     ))}
                 </div>
