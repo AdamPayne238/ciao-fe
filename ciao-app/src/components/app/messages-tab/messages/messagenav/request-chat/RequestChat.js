@@ -29,6 +29,8 @@ const RequestChat = props => {
         message: '',
     })
 
+    
+
     const handleSubmit = event => {
         event.preventDefault()
         requestCreateChat({
@@ -37,6 +39,7 @@ const RequestChat = props => {
             }
         })
         .then(res => {
+            console.log('Request Chat Response', res)
             setSubmitRequest({
                 success: true,
                 message: 'Request sent!'
@@ -58,7 +61,7 @@ const RequestChat = props => {
         // console.log('GET_USERS Response data', data)
         // console.log('Error', error)
         // console.log('Loading', loading)
-        console.log('select', select)
+        // console.log('select', select)
         // console.log("requestCreateChat", requestCreateChat)
         console.log("Submit Request State", submitRequest)
 
