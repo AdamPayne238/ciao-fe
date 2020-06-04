@@ -11,16 +11,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
 
-//Subscripions imports
-// import { split } from 'apollo-link'
-// import { WebSocketLink } from 'apollo-link-ws'
-// import { getMainDefinition } from 'apollo-utilities'
-
 const AUTH_TOKEN = process.env.AUTH_TOKEN
-// const BACKEND = process.env.BACKEND
 
-// 'https://localhost:4500' 
-// 'https://ciao-be-2.herokuapp.com/'
 const httpLink = createHttpLink({
   uri: 'https://ciao-be-2.herokuapp.com/'
 })
@@ -34,25 +26,6 @@ const authLink = setContext((_, {headers}) => {
     }
   }
 })
-
-// const wsLink = new WebSocketLink({
-//   uri: `ws://ciao-be-vscode.herokuapp.com/`,
-//   options: {
-//       reconnect: true,
-//       connectionParams: {
-//           authToken: localStorage.getItem(AUTH_TOKEN),
-//       }
-//   }
-// })
-
-// const link = split(
-//   ({ query }) => {
-//     const { kind, operation } = getMainDefinition(query)
-//     return kind === 'OperationDefinition' && operation === 'subscription'
-//   },
-//   wsLink,
-//   authLink.concat(httpLink)
-// )
 
 const link = authLink.concat(httpLink)
 
