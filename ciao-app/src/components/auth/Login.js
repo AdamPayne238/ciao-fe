@@ -23,10 +23,12 @@ const Login = (props) => {
     const [ password, setPassword ] = useState('')
 
     const saveUserData = token => {
+
         localStorage.setItem(AUTH_TOKEN, token)
+        
     }
 
-    const confirm = async data => {
+    const _confirm = async data => {
         const { token } = data.login
         saveUserData(token)
         props.history.push(`/ciao/home`)
@@ -57,7 +59,7 @@ const Login = (props) => {
             <Mutation
                 mutation={LOGIN_MUTATION}
                 variables={{ email, password }}
-                onCompleted={data => confirm(data)}
+                onCompleted={data => _confirm(data)}
             >
                     {mutation => (
                     <button onClick={mutation}>

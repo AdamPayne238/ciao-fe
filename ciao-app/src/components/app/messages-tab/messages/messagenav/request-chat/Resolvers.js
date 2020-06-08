@@ -20,18 +20,18 @@ export const CREATE_CHAT = gql`
             friend: $friend
         ){
             id
-            friend{
-                id
-                first_name
-                last_name
-                email
-            }
-            user{
-                id
-                first_name
-                last_name
-                email
-            }
+            # friend{
+            #     id
+            #     first_name
+            #     last_name
+            #     email
+            # }
+            # user{
+            #     id
+            #     first_name
+            #     last_name
+            #     email
+            # }
         }
     }
 `
