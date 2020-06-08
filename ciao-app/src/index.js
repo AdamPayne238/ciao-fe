@@ -10,6 +10,13 @@ import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
+// import { AUTH_TOKEN } from './constants'
+
+const getToken = () => {
+	let token = localStorage.getItem('token');
+	return token ? `Bearer ${token}` : '';
+};
+
 
 const AUTH_TOKEN = process.env.AUTH_TOKEN
 
@@ -31,7 +38,15 @@ const link = authLink.concat(httpLink)
 
 const client = new ApolloClient({
   link,
-  cache: new InMemoryCache()
+  // request: operation => {
+  //   operation.setContext({
+  //     headers: {
+  //       authorization: getToken()
+  //     }
+  //   })
+  // },
+  cache: new InMemoryCache(),
+  // resolvers: {},
 })
 
 ReactDOM.render(

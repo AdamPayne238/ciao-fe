@@ -1,5 +1,3 @@
-// This component will be a pop up model attached to the plus button in the message nav.
-
 import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
@@ -29,8 +27,7 @@ const RequestChat = props => {
         message: '',
     })
 
-    
-
+    //data.users.id
     const handleSubmit = event => {
         event.preventDefault()
         requestCreateChat({
@@ -58,14 +55,13 @@ const RequestChat = props => {
 
         // CONSOLE LOGS
         // console.log('Request Chat Open?', open)
-        // console.log('GET_USERS Response data', data)
-        // console.log('Error', error)
+        console.log('GET_USERS Response data', data)
+        console.log('Error', error)
         // console.log('Loading', loading)
         // console.log('select', select)
         // console.log("requestCreateChat", requestCreateChat)
         console.log("Submit Request State", submitRequest)
-
-        // FUNCTIONALITY
+        // console.log('data.users.id', data.users.id)
         
     }, [open, select, handleSubmit, submitRequest])
 
@@ -93,14 +89,6 @@ const RequestChat = props => {
                 </div>
 
                 <div className="request-chat-search-filter">
-                    
-                    {/* <Icon
-                        icon={ICONS.SEARCH}
-                        width={32}
-                        height={32}
-                        color="blue"
-                        background="blue"
-                    /> */}
                     
                     <input
                         type="text"
@@ -131,10 +119,8 @@ const RequestChat = props => {
                 </div>
             )}
 
-
         </div>
     )
-
 }
 
 export default RequestChat
