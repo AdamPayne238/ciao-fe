@@ -83,7 +83,7 @@ const RequestChat = props => {
                 <div className="request-chat-modal-container">
 
                 <div className="request-chat-modal-close">
-                    <button onClick={() => setOpen(false)}>Close</button>
+                    <button onClick={() => (setOpen(false), setSelect(false))}>Close</button>
                 </div>
 
                 <div className="request-chat-search-filter">
