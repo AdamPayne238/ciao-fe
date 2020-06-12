@@ -8,6 +8,17 @@ export const GET_USERS = gql`
             first_name
             last_name
             email
+            chats{
+                id
+                createdAt
+                updatedAt
+                participants{
+                    id
+                    first_name
+                    last_name
+                    email
+                }
+            }
         }
     }
 `
@@ -15,10 +26,10 @@ export const GET_USERS = gql`
 // WORKING
 export const CREATE_CHAT = gql`
     mutation CREATE_CHAT(
-        $friend: String!
+        $participants: String!
     ){
         createChat(
-            friend: $friend
+            participants: $participants
         ){
             id
         }
