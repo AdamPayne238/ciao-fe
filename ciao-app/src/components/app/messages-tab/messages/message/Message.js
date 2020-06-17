@@ -27,7 +27,7 @@ const Message = () => {
           <div>
             {data.chats.map(chatInfo => (
         <div className="message-stack">
-        <h1>{chatInfo.id}</h1>
+        {/* <h1>{chatInfo.id}</h1> */}
             
 
           <div className="message-stack-container">
