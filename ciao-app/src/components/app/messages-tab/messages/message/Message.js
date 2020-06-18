@@ -2,67 +2,46 @@ import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
 import './Message.scss'
-
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 
-import { GET_CHATS } from './Resolvers'
+import { ME } from './Resolvers'
 
 const Message = () => {
 
-    // var message = ["message1", "message2", "message3", "message4", "message5", "message6", "message7", "message8", "message9", "message10", "message11", "message12", "message13", "message14", "message15"]
+    const { error, loading, data } = useQuery(ME)
 
-    const { error, loading, data } = useQuery(GET_CHATS)
+    const { userId, setUserId } = useState()
 
+    // const { currentChats, setCurrentChats } = useState([))
+    const saveId = async () => await setUserId("boop")
 
-    // UseEFFECT
     useEffect(() => {
-      console.log("message.js data", data)
-      
-    }, [data])
+    // console.log("message.js data", data)
+      // console.log("message.js data.me.id", data)
+    // console.log("userId", userId)
 
+    }, [data, userId])
 
+    // let myId = null
     return(
       <div className="message-container">
+
         {!loading && data && (
           <div>
-            {data.chats.map(chatInfo => (
-        <div className="message-stack">
-        {/* <h1>{chatInfo.id}</h1> */}
-            
-
-          <div className="message-stack-container">
-            <div className="message-stack-img">
-              <img src={EmptyProfilePic} />
-            </div>
-          
-          <div className="message-img-name-container">
-            <div className="message-stack-name">
-              <p>
-                Random User
-              </p>
-            </div>
-            <div className="message-stack-preview">
-              <p>
-                recent message...
-              </p>
-            </div>
+            {data.me.chats.map(chatInfo => (
+              <>
+                {/* REPLACE MAP WITH FILTER AND SET CONSTRAINT TO != userId so only values of other participant will return for rendering */}
+                {chatInfo.participants.map(participants => (
+                  <div className="message-stack">
+                    {/* {console.log("participants", participants)} */}
+                    <h1>{participants.first_name}</h1>
+                  </div>
+                ))}
+              </>
+            ))}
           </div>
+        )}    
 
-            <div className="message-stack-time">
-              <p>5 min</p>
-            </div>
-
-            </div>
-            </div>
-          ))}
-        
-
-          </div>
-          
-
-        )}
-
-          
       </div>
 
 

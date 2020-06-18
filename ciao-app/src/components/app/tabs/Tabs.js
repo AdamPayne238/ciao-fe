@@ -43,20 +43,7 @@ const Tabs = () => {
                 </div>
             </NavLink>
 
-            {/* NEW */}
-            <NavLink to="/ciao/social">
-                <div className="tab-row">
-                <Icon
-                        icon={ICONS.WORLD}
-                        width={32}
-                        height={32}
-                        color={pathname.includes('/social') ? '#E1473E' : '#EFC2C6'}
-                    />
-                <a color={pathname.includes('/social') ? '#FB2046' : '#FB2046'}>
-                    Social
-                </a>
-                </div>
-            </NavLink>
+
 
             <NavLink to="/ciao/messages">
                 <div className="tab-row">
@@ -68,6 +55,21 @@ const Tabs = () => {
                     />
                 <a color={pathname.includes('/messages') ? '#FB2046' : '#FB2046'}>
                     Messages
+                </a>
+                </div>
+            </NavLink>
+
+                        {/* NEW */}
+                        <NavLink to="/ciao/social">
+                <div className="tab-row">
+                <Icon
+                        icon={ICONS.NETWORK2}
+                        width={32}
+                        height={32}
+                        color={pathname.includes('/social') ? '#E1473E' : '#EFC2C6'}
+                    />
+                <a color={pathname.includes('/social') ? '#FB2046' : '#FB2046'}>
+                    Social
                 </a>
                 </div>
             </NavLink>

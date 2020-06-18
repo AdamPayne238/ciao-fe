@@ -54,12 +54,12 @@ const RequestChat = props => {
     useEffect(() => {
 
         // console.log('Request Chat Open?', open)
-        console.log('GET_USERS Response data', data)
+        // console.log('GET_USERS Response data', data)
         // console.log('Error', error)
         // console.log('Loading', loading)
         // console.log('select', select)
         // console.log("requestCreateChat", requestCreateChat)
-        console.log("Submit Request State", submitRequest)
+        // console.log("Submit Request State", submitRequest)
         
     }, [open, select, handleSubmit, submitRequest])
 
