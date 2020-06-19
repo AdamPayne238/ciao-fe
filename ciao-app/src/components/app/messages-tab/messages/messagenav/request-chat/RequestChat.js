@@ -15,7 +15,7 @@ const RequestChat = props => {
 
     const [ open, setOpen ] = useState(false)
     const [ select, setSelect ] = useState(false)
-    const { loading, data } = useQuery(GET_USERS)
+    const { loading, data, refetch } = useQuery(GET_USERS)
     const [ requestCreateChat ] = useMutation(CREATE_CHAT)
 
     const [ submitRequest, setSubmitRequest ] = useState({
@@ -37,6 +37,8 @@ const RequestChat = props => {
                 message: 'Request sent!'
             })
             setOpen(false)
+            // Refreshes List in Message.js when chat is created.
+            refetch()
         })
         .catch(err => {
             console.log('Request Chat Error', err)

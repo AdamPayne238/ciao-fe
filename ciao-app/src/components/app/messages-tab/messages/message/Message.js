@@ -9,19 +9,16 @@ const Message = () => {
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
 
-    const [ chatList, setChatList ] = useState(null)
-
     useEffect(() => {
       console.log("message.js data", data)
       console.log("dataId", dataId)
-      setChatList(data)
 
-    }, [data, chatList])
+    }, [data])
 
     return(
       
       <div className="message-container">
-        {!loading && data && !loadingId && dataId && (
+        {!loading && data && !loadingId && dataId && refetch &&(
           <>
             {data.me.chats.map(chatInfo => (
               
