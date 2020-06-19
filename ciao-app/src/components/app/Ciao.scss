@@ -1,21 +1,20 @@
 .ciao-container{
     display: flex;
-    height: 54rem;
-    // width: 90rem;
+    height: 52.5rem;
+    // width: 100rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
     padding: 4rem;
-    padding-right: 4rem;
-    padding-left: 4rem;
+    // padding-right: 4rem;
+    // padding-left: 4rem;
 
 }
 
 .ciao-logo{
-
+    position: float;
     height: 2rem;
     width: 1rem;
-    // margin-left:140px;
-    // margin-left: 3.5rem;
-    margin-left: 8.8rem;
-    // margin-left: 55rem;
+    margin-left: 19rem;
 
         svg{
             height: 7rem;
@@ -24,18 +23,16 @@
 
 }
 
-// .ciao-logo-upside{
-//     transform: rotate(180deg);
-//     height: 2rem;
-//     width: 0;
-//     margin-left:1500px;
-//     // margin-left: 3.5rem;
-//     // margin-left: 111rem;
-//     // margin-left: 55rem;
+.ciao-logo-upside{
+    position: float;
+    height: 2rem;
+    width: 1rem;
+    margin-left: 114rem;
+    transform: rotate(180deg);
 
-//         svg{
-//             height: 7rem;
-//             width: 7rem;
-//         }
+        svg{
+            height: 7rem;
+            width: 7rem;
+        }
 
-// }
+}
