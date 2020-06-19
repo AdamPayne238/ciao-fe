@@ -15,11 +15,7 @@ const RequestChat = props => {
 
     const [ open, setOpen ] = useState(false)
     const [ select, setSelect ] = useState(false)
-
-    // Query => Get All Users
-    const { error, loading, data } = useQuery(GET_USERS)
-
-    // Mutation => Create Chat
+    const { loading, data } = useQuery(GET_USERS)
     const [ requestCreateChat ] = useMutation(CREATE_CHAT)
 
     const [ submitRequest, setSubmitRequest ] = useState({
@@ -27,7 +23,6 @@ const RequestChat = props => {
         message: '',
     })
 
-    //data.users.id
     const handleSubmit = event => {
         event.preventDefault()
         requestCreateChat({
@@ -41,6 +36,7 @@ const RequestChat = props => {
                 success: true,
                 message: 'Request sent!'
             })
+            setOpen(false)
         })
         .catch(err => {
             console.log('Request Chat Error', err)
@@ -98,7 +94,6 @@ const RequestChat = props => {
                 <div className="request-chat-user-list">
                     {data.users.map(info => (
                         <div className="request-chat-single-user">
-                            {/* <p>ID:{info.id}</p> */}
                             <p>{info.first_name} {info.last_name}</p>
                             <p>{info.email}</p>
                             {select === false && (

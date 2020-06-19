@@ -11,10 +11,13 @@
     
     margin: auto;
     background: #1F2032;
-    // height: 40rem;
     width: 88%;
     margin-bottom: 1.5rem;
     border-radius: 5px 20px 20px 20px;
+    :hover{
+        border-radius: 5px 20px 20px 20px;
+        background: #282C47;
+    }
 }
 
 .message-stack-img{
@@ -34,6 +37,7 @@
         justify-content: space-between;
         padding: 0 1rem 0 1rem;
         align-items: center;
+
         
     .message-img-name-container{
 
