@@ -42,5 +42,12 @@ export const ME = gql`
             }
         }
     }
+`
 
+export const MY_ID = gql`
+    query{
+        me{
+            id
+        }
+    }
 `
