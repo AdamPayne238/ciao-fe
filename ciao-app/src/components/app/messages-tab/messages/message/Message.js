@@ -8,6 +8,7 @@ const Message = () => {
 
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
+    const [ chatId, setChatId ] = useState(false)
 
     useEffect(() => {
       console.log("message.js data", data)
@@ -24,7 +25,10 @@ const Message = () => {
               
               <div className="message-stack">
                 
-                <div className="message-stack-container">
+                <div 
+                  className="message-stack-container"
+                  // onClick={() => chatId ? setChatId()}
+                >
             
                   <div className="message-stack-img">
                     <img src={EmptyProfilePic} />
