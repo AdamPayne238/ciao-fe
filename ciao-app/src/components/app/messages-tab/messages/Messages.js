@@ -14,7 +14,6 @@ const Messages = () => {
         <>
             {pathname.includes('/ciao/messages') && (
                 <div className="messages-container">
-            
                     <SearchConvo />
                     <MessageNav />
                     <Message />

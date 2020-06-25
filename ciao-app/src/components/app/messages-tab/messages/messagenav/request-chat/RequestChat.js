@@ -11,7 +11,7 @@ import { ICONS } from '../../../../../../global/IconConstants'
 // Styles
 import './RequestChat.scss'
 
-const RequestChat = props => {
+const RequestChat = () => {
 
     const [ open, setOpen ] = useState(false)
     const [ select, setSelect ] = useState(false)
@@ -24,7 +24,7 @@ const RequestChat = props => {
     })
 
     const handleSubmit = event => {
-        event.preventDefault()
+        // event.preventDefault()
         requestCreateChat({
             variables: {
                 participants: select
@@ -48,6 +48,11 @@ const RequestChat = props => {
             })
         })
     }
+
+    // ADD SEARCH FUNC
+    // const handleSearch = event => {
+    //     // Search Functionality
+    // }
 
     useEffect(() => {
 
@@ -103,7 +108,7 @@ const RequestChat = props => {
                             )}
                             {select === info.id && (
                                 <>
-                                <button onClick={handleSubmit}>Submit</button>
+                                <button onClick={() => (handleSubmit(), setSelect(false))}>Submit</button>
                                 <button onClick={() => setSelect(false)}>Cancel</button>
                                 </>
                             )}
