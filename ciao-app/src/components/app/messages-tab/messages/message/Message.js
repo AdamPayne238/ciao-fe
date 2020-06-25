@@ -13,8 +13,9 @@ const Message = () => {
     useEffect(() => {
       console.log("message.js data", data)
       console.log("dataId", dataId)
+      console.log("message.js chatId state", chatId)
 
-    }, [data])
+    }, [data, chatId])
 
     return(
       
@@ -27,7 +28,7 @@ const Message = () => {
                 
                 <div 
                   className="message-stack-container"
-                  // onClick={() => chatId ? setChatId()}
+                  onClick={() => chatId ? setChatId(false) : setChatId(true)}
                 >
             
                   <div className="message-stack-img">
