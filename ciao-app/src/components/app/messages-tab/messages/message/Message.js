@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery, useMutation } from '@apollo/react-hooks'
 import { ME, MY_ID } from './Resolvers'
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 import './Message.scss'
+import ActiveMessage from '../../active-message/ActiveMessage'
 
 const Message = () => {
 
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
+    const [ toggleActive ] = useMutation()
     const [ chatId, setChatId ] = useState(false)
 
     useEffect(() => {
@@ -60,7 +62,9 @@ const Message = () => {
                   </div>
 
                 </div>
+                {/* <ActiveMessage/> */}
               </div>
+
       
 
               ))}
