@@ -9,7 +9,7 @@ const Message = () => {
 
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
-    const [ toggleActive ] = useMutation()
+    // const [ toggleActive ] = useMutation()
     const [ chatId, setChatId ] = useState(false)
 
     useEffect(() => {
@@ -19,11 +19,27 @@ const Message = () => {
 
     }, [data, chatId])
 
+      // WORKING w/ Warnings
+      // if (!loading && data && !loadingId && dataId && refetch){
+      //   data.me.chats.map(chatty => (
+      //     console.log("chatty test", chatty)
+      //   ))
+      // } else {
+      //   console.log("not working!")
+      // }
+    
+    // NOT WORKING
+    // Window.onload = function () {
+    //   getMyChats()
+    // }
+
     return(
       
       <div className="message-container">
         {!loading && data && !loadingId && dataId && refetch &&(
           <>
+
+            {/* <button onClick={() => getMyChats()} >Click Me!</button> */}
             {data.me.chats.map(chatInfo => (
               
               <div className="message-stack">
