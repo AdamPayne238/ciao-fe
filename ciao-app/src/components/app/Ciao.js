@@ -1,7 +1,7 @@
 import React from 'react'
 import Tabs from './tabs/Tabs'
 import Messages from './messages-tab/messages/Messages'
-import ActiveMessage from './messages-tab/active-message/ActiveMessage'
+// import ActiveMessage from './messages-tab/active-message/ActiveMessage'
 import Home from './home-tab/Home'
 import Contacts from './contacts-tab/Contacts'
 import Notifications from './notifications-tab/Notifications'
@@ -38,7 +38,7 @@ const Ciao = () => {
                 <Home />
 
                 <Messages />
-                <ActiveMessage />
+                {/* <ActiveMessage /> */}
 
                 <Contacts />
 

@@ -20,13 +20,13 @@ const Message = () => {
     }, [data, chatId])
 
       // WORKING w/ Warnings
-      // if (!loading && data && !loadingId && dataId && refetch){
-      //   data.me.chats.map(chatty => (
-      //     console.log("chatty test", chatty)
-      //   ))
-      // } else {
-      //   console.log("not working!")
-      // }
+      if (!loading && data && !loadingId && dataId && refetch){
+        data.me.chats.map(chatty => (
+          console.log("chatty test", chatty)
+        ))
+      } else {
+        console.log("not working!")
+      }
     
     // NOT WORKING
     // Window.onload = function () {
@@ -78,9 +78,12 @@ const Message = () => {
                   </div>
 
                 </div>
-                {/* <ActiveMessage/> */}
+                {chatId === true && (
+                  <ActiveMessage />
+                )}
               </div>
-
+              
+          
       
 
               ))}
