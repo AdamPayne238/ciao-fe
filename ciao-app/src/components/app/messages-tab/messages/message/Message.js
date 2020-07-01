@@ -1,37 +1,66 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
-import { ME, MY_ID } from './Resolvers'
+import { ME, MY_ID, TOGGLE_CHAT } from './Resolvers'
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 import './Message.scss'
-import ActiveMessage from '../../active-message/ActiveMessage'
+// import ActiveMessage from '../../active-message/ActiveMessage'
 
 const Message = () => {
 
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
-    // const [ toggleActive ] = useMutation()
     const [ chatId, setChatId ] = useState(false)
+    const [ toggleChat ] = useMutation(TOGGLE_CHAT)
 
     useEffect(() => {
-      console.log("message.js data", data)
-      console.log("dataId", dataId)
+      // console.log("message.js data", data)
+      // console.log("dataId", dataId)
       console.log("message.js chatId state", chatId)
-
-    }, [data, chatId])
-
-      // WORKING w/ Warnings
-      if (!loading && data && !loadingId && dataId && refetch){
-        data.me.chats.map(chatty => (
-          console.log("chatty test", chatty)
-        ))
+      if(chatId){
+        handleToggleOn()
       } else {
-        console.log("not working!")
+        handleToggleOff()
       }
+    }, [chatId])
+
+    const handleToggleOn = () => {
+      if(chatId){
+        toggleChat({
+          variables: {
+            id: chatId,
+            active: true
+          }
+        }).then(res => {
+          console.log("if res", res)
+        })
+      }
+    }
+
+    const handleToggleOff = () => {
+      if(chatId){
+        toggleChat({
+          variables: {
+            id: chatId,
+            active: false
+          }
+        }).then(res => {
+          console.log("if res", res)
+          setChatId(false)
+        })
+      }
+    }
     
-    // NOT WORKING
-    // Window.onload = function () {
-    //   getMyChats()
-    // }
+      // WORKING w/ Warnings
+      // if (!loading && data && !loadingId && dataId && refetch){
+      //   data.me.chats.map(chatty => (
+      //     console.log("chatty test", chatty)
+
+      //   ))
+      // } else {
+      //   console.log("not working!")
+      // }
+
+
 
     return(
       
@@ -46,7 +75,7 @@ const Message = () => {
                 
                 <div 
                   className="message-stack-container"
-                  onClick={() => chatId ? setChatId(false) : setChatId(true)}
+                  onClick={() => chatId ? handleToggleOff() : setChatId(chatInfo.id)}
                 >
             
                   <div className="message-stack-img">
@@ -78,9 +107,9 @@ const Message = () => {
                   </div>
 
                 </div>
-                {chatId === true && (
+                {/* {chatId === true && (
                   <ActiveMessage />
-                )}
+                )} */}
               </div>
               
           
