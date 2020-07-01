@@ -5,11 +5,13 @@ import './Conversation.scss'
 
 const Conversation = () => {
 
+    
+
     return(
 
     <ul className="messages">
 
-    <div>
+    {/* <div>
     <li className="msg-wp">
         <blockquote className="msg">
         <p>Hey whats up man hows it going?</p>
@@ -57,7 +59,7 @@ const Conversation = () => {
         <blockquote className="msg">
         <p>Sounds good!</p>
         </blockquote>
-    </li>
+    </li> */}
 
     </ul>
         

@@ -52,8 +52,19 @@ export const MY_ID = gql`
     }
 `
 
-// export const TOGGLE_ACTIVE = gql`
-//     mutation{
-        
-//     }
-// `
+export const TOGGLE_CHAT = gql`
+    mutation TOGGLE_CHAT(
+        $id: String
+        $active: Boolean
+    ){
+        updateChat(
+            id: $id
+            active: $active
+        ){
+            id
+            createdAt
+            updatedAt
+            active
+        }
+    }
+`
