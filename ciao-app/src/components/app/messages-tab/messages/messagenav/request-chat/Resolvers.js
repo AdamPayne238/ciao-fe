@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import {gql} from 'apollo-boost'
 
 // WORKING
 export const GET_USERS = gql`

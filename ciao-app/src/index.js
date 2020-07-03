@@ -4,15 +4,22 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-import { ApolloProvider } from 'react-apollo'
-import { ApolloClient } from 'apollo-client'
+// OLD IMPORTS JULY 2nd 2020
+// import { ApolloClient } from 'apollo-client'
+// import { InMemoryCache } from 'apollo-cache-inmemory'
+// import { ApolloProvider } from 'react-apollo'
+
+// NEW IMPORTS ref: https://www.youtube.com/watch?v=iNStN6q_5As
+import  { ApolloClient, InMemoryCache } from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+// 
 import { createHttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
 import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
 import { AUTH_TOKEN } from './constants'
-// import gql from 'graphql-tag'
 
+// import {gql} from 'apollo-boost'
 // import Chat from './ChatList';
 
 const httpLink = createHttpLink({
@@ -33,38 +40,25 @@ const link = authLink.concat(httpLink)
 
 const cache = new InMemoryCache()
 
-// NEW
-// const resolvers = {
-//   Chat: {
-//     selected: (chat) => chat.selected || false,
-//   },
-//   Mutation: {
-//     toggleChat: (_, args, { cache: getCacheKey }) => {
-//       const id = getCacheKey({ id: args.id, __typename: 'Chat' })
-//       const fragment = gql`
-//         fragment chatToSelect on Chat {
-//           selected
-//         }
-//       `;
-//       const chat = cache.readFragment({ fragment, id })
-//       const data = { ...chat, selected: !chat.selected }
-//       cache.writeFragment({ fragment, id, data })
-//       return null
-//     },
-//   },
-// };
-
 const client = new ApolloClient({
-  // resolvers,
   link,
   cache,
-  clientState: {
-    defaults: {
-      userId: false,
-      chatId: false,
-      // availabeChats: availabe_chats
-      
+  resolvers: {},
+})
+
+cache.writeData({
+  data: {
+    clientState: {
+      defaults: {
+        user: {
+          userId: "Not Set",
+        },
+        chat: {
+          chatId: 'Not Set',
+        }
+
     }
+  }
   }
 })
 

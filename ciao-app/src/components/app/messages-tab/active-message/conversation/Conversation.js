@@ -4,51 +4,40 @@ import { ACTIVE_CHAT, MY_ACTIVE_CHATS } from './Resolvers'
 // Styles
 import './Conversation.scss'
 
+import { gql } from 'apollo-boost'
 
+import { useApolloClient } from "@apollo/react-hooks"
+
+const QUERY_CHAT_ID = gql`
+    query{
+        chat @client{
+            chatId
+        }
+    }
+`
 
 
 export default function Conversation(){
 
-    const { refetch, loading, data } = useQuery(MY_ACTIVE_CHATS)
-    const [myMessages, setMyMessages ] = useState([])
+    const client = useApolloClient()
 
-    // const { refetch, loading, data } = useQuery(MY_ACTIVE_CHATS, {
-	// 	variables: { userId: false },
-    // });
-    
-    
-    
-    
-
-    
+    const  {data}   = useQuery(QUERY_CHAT_ID)
+    // const { data: { chatId }} = useQuery(QUERY_CHAT_ID);
+    // console.log()
+    console.log(data)
 
     useEffect(() => {
         
-        activeChatMessages()
+       
         
-    }, [myMessages])
-
-
-
-    const activeChatMessages = () => {
-
-        if(!loading && data ){
-            data.me.chats.map(chat => {
-                console.log("chats", chat)
-            if (chat.active === true){
-                chat.messages.map(msg => {
-                    console.log("msg", msg)
-                    setMyMessages(msg)
-                })
-            }
-            })
-        }
-    }
+    }, [])
 
 
     return(
 
     <ul className="messages">
+        {/* {console.log(data)} */}
+    <button onClick={() => client.writeData({ data: {clientState: {defaults: {user: { userId: 'update!'}}}}})}>click me</button>
 
     {/* <div>
     <li className="msg-wp">

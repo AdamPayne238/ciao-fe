@@ -1,4 +1,8 @@
-import gql from 'graphql-tag'
+// OLD
+// import gql from 'graphql-tag'
+
+// NEW
+import {gql} from 'apollo-boost'
 
 export const GET_CHATS = gql`
     query {
