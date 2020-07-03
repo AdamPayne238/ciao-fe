@@ -4,6 +4,7 @@ import { ME, MY_ID, TOGGLE_CHAT } from './Resolvers'
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 import './Message.scss'
 // import ActiveMessage from '../../active-message/ActiveMessage'
+import { useApolloClient } from "@apollo/react-hooks"
 
 const Message = () => {
 
@@ -11,6 +12,8 @@ const Message = () => {
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
     const [ chatId, setChatId ] = useState(false)
     const [ toggleChat ] = useMutation(TOGGLE_CHAT)
+
+    const client = useApolloClient()
 
     useEffect(() => {
       // console.log("message.js data", data)
@@ -33,7 +36,8 @@ const Message = () => {
           }
         }).then(res => {
           console.log("if res On", res)
-          localStorage.setItem('chatId', chatId)
+          // localStorage.setItem('chatId', chatId)
+          client.writeData({ data: {clientState: {defaults: {chat: { chatId: chatId}}}}})
         })
       }
     }
