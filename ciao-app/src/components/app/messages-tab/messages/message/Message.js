@@ -23,6 +23,7 @@ const Message = () => {
       }
     }, [chatId])
 
+
     const handleToggleOn = () => {
       if(chatId){
         toggleChat({
@@ -31,7 +32,8 @@ const Message = () => {
             active: true
           }
         }).then(res => {
-          console.log("if res", res)
+          console.log("if res On", res)
+          localStorage.setItem('chatId', chatId)
         })
       }
     }
@@ -44,22 +46,12 @@ const Message = () => {
             active: false
           }
         }).then(res => {
-          console.log("if res", res)
+          console.log("if res Off", res)
           setChatId(false)
         })
       }
     }
     
-      // WORKING w/ Warnings
-      // if (!loading && data && !loadingId && dataId && refetch){
-      //   data.me.chats.map(chatty => (
-      //     console.log("chatty test", chatty)
-
-      //   ))
-      // } else {
-      //   console.log("not working!")
-      // }
-
 
 
     return(
