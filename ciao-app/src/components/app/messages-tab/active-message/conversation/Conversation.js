@@ -16,15 +16,23 @@ const QUERY_CHAT_ID = gql`
     }
 `
 
+// const ADAMS_ID = gql`
+//     query{
+//         adam @client
+//     }
+
+// `
+
 
 export default function Conversation(){
 
-    const client = useApolloClient()
+    // const client = useApolloClient()
 
-    const  {data}   = useQuery(QUERY_CHAT_ID)
+    // const  {data}   = useQuery(QUERY_CHAT_ID)
     // const { data: { chatId }} = useQuery(QUERY_CHAT_ID);
+    // const {data: {adam}} = useQuery(ADAMS_ID)
     // console.log()
-    console.log(data)
+    // console.log(adam)
 
     useEffect(() => {
         
@@ -37,7 +45,10 @@ export default function Conversation(){
 
     <ul className="messages">
         {/* {console.log(data)} */}
-    <button onClick={() => client.writeData({ data: {clientState: {defaults: {user: { userId: 'update!'}}}}})}>click me</button>
+    {/* <button onClick={() => client.writeData({ data: {clientState: {defaults: {user: { userId: 'update!'}}}}})}>click me</button>
+    <button onClick={() => client.writeData({data: {adam: "adamsId"}})}>click me</button> */}
+
+
 
     {/* <div>
     <li className="msg-wp">
