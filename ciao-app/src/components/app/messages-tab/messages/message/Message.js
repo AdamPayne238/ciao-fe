@@ -3,58 +3,75 @@ import { useQuery, useMutation } from '@apollo/react-hooks'
 import { ME, MY_ID, TOGGLE_CHAT } from './Resolvers'
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 import './Message.scss'
-// import ActiveMessage from '../../active-message/ActiveMessage'
-import { useApolloClient } from "@apollo/react-hooks"
+
+// Context Hooks
+import { useActivity, useActivityUpdate } from '../../../../../global/context/ActivityContext'
+
+import { useStore } from '../../../../../global/context/Store'
 
 const Message = () => {
 
+    const {state, dispatch} = useStore()
+
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
+
+    // const [ toggleChat ] = useMutation(TOGGLE_CHAT)
+
     const [ chatId, setChatId ] = useState(false)
-    const [ toggleChat ] = useMutation(TOGGLE_CHAT)
 
-    const client = useApolloClient()
 
-    useEffect(() => {
+    // const activeChat = useActivity()
+    // const toggleChat = useActivityUpdate()
+    // console.log("activeChat", activeChat)
+
+
+
+    // useEffect(() => {
+
+      // console.log("CHAT ID", chatId)
+
       // console.log("message.js data", data)
       // console.log("dataId", dataId)
-      console.log("message.js chatId state", chatId)
-      if(chatId){
-        handleToggleOn()
-      } else {
-        handleToggleOff()
-      }
-    }, [chatId])
+
+    //   console.log("message.js chatId state", chatId)
+    //   if(chatId){
+    //     handleToggleOn()
+    //   } else {
+    //     handleToggleOff()
+    //   }
+    // }, [])
 
 
-    const handleToggleOn = () => {
-      if(chatId){
-        toggleChat({
-          variables: {
-            id: chatId,
-            active: true
-          }
-        }).then(res => {
-          console.log("if res On", res)
-          // localStorage.setItem('chatId', chatId)
-          client.writeData({ data: {clientState: {defaults: {chat: { chatId: chatId}}}}})
-        })
-      }
-    }
+    // const handleToggleOn = () => {
+    //   if(chatId){
+    //     toggleChat({
+    //       variables: {
+    //         id: chatId,
+    //         active: true
+    //       }
+    //     }).then(res => {
+    //       console.log("if res On", res)
+    //       // client.writeData({ data: {clientState: {defaults: {chat: { chatId: chatId}}}}})
+    //     })
+    //   }
+    // }
 
-    const handleToggleOff = () => {
-      if(chatId){
-        toggleChat({
-          variables: {
-            id: chatId,
-            active: false
-          }
-        }).then(res => {
-          console.log("if res Off", res)
-          setChatId(false)
-        })
-      }
-    }
+    // const handleToggleOff = () => {
+    //   if(chatId){
+    //     toggleChat({
+    //       variables: {
+    //         id: chatId,
+    //         active: false
+    //       }
+    //     }).then(res => {
+    //       console.log("if res Off", res.data.updateChat.id)
+    //       setChatId(false)
+    //     })
+    //   }
+    // }
+
+
     
 
 
@@ -71,7 +88,7 @@ const Message = () => {
                 
                 <div 
                   className="message-stack-container"
-                  onClick={() => chatId ? handleToggleOff() : setChatId(chatInfo.id)}
+                  onClick={() => dispatch({type: 'toggle-on', id: chatInfo.id }) }
                 >
             
                   <div className="message-stack-img">
