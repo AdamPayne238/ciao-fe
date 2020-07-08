@@ -23,7 +23,7 @@ const reducer = (state, action) => {
 
 export const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log("STORE STATE", state)
+  console.log("STORE STATE IN Store.js", state)
 
   return (
     <StoreContext.Provider value={{state, dispatch}}>
