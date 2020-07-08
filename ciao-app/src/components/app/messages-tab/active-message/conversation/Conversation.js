@@ -2,35 +2,33 @@ import React, { useEffect, useState } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 import { ACTIVE_CHAT, MY_ACTIVE_CHATS } from './Resolvers'
 import './Conversation.scss'
+import { useStore } from '../../../../../global/context/Store'
+import {gql} from 'apollo-boost'
 
-import { gql } from 'apollo-boost'
 
-// Required to access client in this component
-import { useApolloClient } from "@apollo/react-hooks"
-
-const QUERY_CHAT_ID = gql`
-    query{
-        chat @client{
-            chatId
-        }
-    }
-`
 
 
 
 export default function Conversation(){
 
-    // const client = useApolloClient()
+    const {state, dispatch} = useStore()
 
-    // const  {data}   = useQuery(QUERY_CHAT_ID)
-    // const { data: { chatId }} = useQuery(QUERY_CHAT_ID);
+    const { refetch, loading, data } = useQuery(ACTIVE_CHAT, {
+        variables: {
+            id: state.id
+        }
+    })
 
-    // useEffect(() => {
-        
-    // }, [])
+    if(!loading && data){
+        console.log("QUERY DATA in CONVO", data)
+    }
+    
 
-    // Writes Data to Cache (in placeholder set index.js)
-    // onClick={() => client.writeData({ data: {clientState: {defaults: {user: { userId: 'update!'}}}}})}
+
+    console.log("STORE STATE IN Conversation.js", state.id)
+
+
+
 
     return(
 
