@@ -55,6 +55,7 @@ cache.writeData({
         },
         chat: {
           chatId: 'Not Set',
+          // __typename: 'Chat',
         }
 
     }
