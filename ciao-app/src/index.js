@@ -19,9 +19,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
 import { AUTH_TOKEN } from './constants'
 
-// import {gql} from 'apollo-boost'
-// import Chat from './ChatList';
-
 const httpLink = createHttpLink({
   uri: 'https://ciao-be-2.herokuapp.com/'
 })
@@ -46,24 +43,24 @@ const client = new ApolloClient({
   resolvers: {},
 })
 
-cache.writeData({
-  data: {
-    clientState: {
-      defaults: {
-        user: {
-          userId: "Not Set",
-        },
-        chat: {
-          chatId: 'Not Set',
-          // __typename: 'Chat',
-        }
-
-    }
-  }
-  }
-})
-
-console.log("INDEX CACHE", cache)
+// This Block:
+// - Writes data directly to inMemoryCache 
+// - Sets up placeholders to be manipulated
+// cache.writeData({
+//   data: {
+//     clientState: {
+//       defaults: {
+//         user: {
+//           userId: "Not Set",
+//         },
+//         chat: {
+//           chatId: 'Not Set',
+//         }
+//       }
+//     }
+//   }
+// })
+// console.log("INDEX CACHE", cache)
 
 ReactDOM.render(
   <BrowserRouter>

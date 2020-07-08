@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 import { ACTIVE_CHAT, MY_ACTIVE_CHATS } from './Resolvers'
-// Styles
 import './Conversation.scss'
 
 import { gql } from 'apollo-boost'
 
+// Required to access client in this component
 import { useApolloClient } from "@apollo/react-hooks"
 
 const QUERY_CHAT_ID = gql`
@@ -16,12 +16,6 @@ const QUERY_CHAT_ID = gql`
     }
 `
 
-// const ADAMS_ID = gql`
-//     query{
-//         adam @client
-//     }
-
-// `
 
 
 export default function Conversation(){
@@ -30,24 +24,17 @@ export default function Conversation(){
 
     // const  {data}   = useQuery(QUERY_CHAT_ID)
     // const { data: { chatId }} = useQuery(QUERY_CHAT_ID);
-    // const {data: {adam}} = useQuery(ADAMS_ID)
-    // console.log()
-    // console.log(adam)
 
-    useEffect(() => {
+    // useEffect(() => {
         
-       
-        
-    }, [])
+    // }, [])
 
+    // Writes Data to Cache (in placeholder set index.js)
+    // onClick={() => client.writeData({ data: {clientState: {defaults: {user: { userId: 'update!'}}}}})}
 
     return(
 
     <ul className="messages">
-        {/* {console.log(data)} */}
-    {/* <button onClick={() => client.writeData({ data: {clientState: {defaults: {user: { userId: 'update!'}}}}})}>click me</button>
-    <button onClick={() => client.writeData({data: {adam: "adamsId"}})}>click me</button> */}
-
 
 
     {/* <div>
