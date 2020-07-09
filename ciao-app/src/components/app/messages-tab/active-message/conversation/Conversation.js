@@ -14,8 +14,7 @@ function Conversation(){
     const { loading, data } = useQuery(ACTIVE_CHAT, {
         variables: {
             id: state.id
-        },
-        fetchPolicy: 'network-only'
+        }
     })
     
 
