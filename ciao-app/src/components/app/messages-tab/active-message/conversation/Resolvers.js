@@ -43,6 +43,14 @@ export const MY_ACTIVE_CHATS = gql`
 
 `
 
+export const MY_ID = gql`
+    query{
+        me{
+            id
+        }
+    }
+`
+
 // export const ACTIVE_CHAT = gql`
 //     query{
 //         chat {
