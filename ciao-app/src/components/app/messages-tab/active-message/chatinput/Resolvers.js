@@ -1,5 +1,19 @@
 import {gql} from 'apollo-boost'
 
+export const CREATE_MESSAGE = gql`
+mutation CREATE_MESSAGE(
+    $chatId: String!
+    $text: String!
+){
+    createMessage(
+        chatId: $chatId
+        text: $text
+    ){
+        id
+    }
+}
+`
+
 export const ACTIVE_CHAT = gql`
     query chat($id: String!){
         chat(id: $id){
@@ -19,36 +33,6 @@ export const ACTIVE_CHAT = gql`
                 }
             }
         
-        }
-    }
-`
-
-export const MY_ACTIVE_CHATS = gql`
-    query {
-        me {
-            id 
-            email 
-            chats{
-                id
-                active
-                messages{
-                    id
-                    text
-                    user{
-                        id
-                        email
-                    }
-                }
-            }
-        }
-    }
-
-`
-
-export const MY_ID = gql`
-    query{
-        me{
-            id
         }
     }
 `
