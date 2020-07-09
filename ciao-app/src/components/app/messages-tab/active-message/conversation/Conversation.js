@@ -1,39 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
-import { ACTIVE_CHAT, MY_ACTIVE_CHATS } from './Resolvers'
+import { ACTIVE_CHAT, MY_ACTIVE_CHATS, MY_ID } from './Resolvers'
 import './Conversation.scss'
 import { useStore } from '../../../../../global/context/Store'
-import {gql} from 'apollo-boost'
 
 
-
-
-
-export default function Conversation(){
+function Conversation(){
 
     const {state, dispatch} = useStore()
+
+    const { loading: loadingId, data: dataId} = useQuery(MY_ID)
 
     const { refetch, loading, data } = useQuery(ACTIVE_CHAT, {
         variables: {
             id: state.id
         }
     })
-
-    if(!loading && data){
-        console.log("QUERY DATA in CONVO", data)
-    }
     
-
-
-    console.log("STORE STATE IN Conversation.js", state.id)
-
+    if(!loading && data && !loadingId && dataId){
+        console.log("QUERY DATA in CONVO", data)
+        console.log('dataid', dataId.me.id)
+    }
 
 
 
     return(
-
+ 
     <ul className="messages">
 
+        {!loading && data && !loadingId && dataId && (
+            <>
+                {data.chat.messages.map(info => (
+                  <div>
+                  <li className="msg-wp">
+                      <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
+                      <p>{"userId"} {info.user.id}</p>
+                      <p>{"Message"} {info.text}</p>
+                      <p>{"Created at"} {info.createdAt}</p>
+                      </blockquote>
+                  </li>
+                  </div>
+                ))}
+            </>
+        )}
 
     {/* <div>
     <li className="msg-wp">
@@ -86,8 +95,9 @@ export default function Conversation(){
     </li> */}
 
     </ul>
+
         
     )
 }
 
-// export default Conversation
+export default Conversation

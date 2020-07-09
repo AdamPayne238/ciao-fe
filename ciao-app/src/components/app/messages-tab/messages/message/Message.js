@@ -13,7 +13,7 @@ const Message = () => {
 
     const {state, dispatch} = useStore()
 
-    console.log("STORE STATE IN Message.js", state)
+    // console.log("STORE STATE IN Message.js", state)
 
     const { refetch, loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
