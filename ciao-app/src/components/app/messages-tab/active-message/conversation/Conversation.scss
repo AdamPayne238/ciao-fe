@@ -1,40 +1,38 @@
 
 .messages {
     border-top: 4px solid #2A2B3C;
-    max-height: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 2rem;
-    margin-right: 2rem;
     margin-top: 0;
     margin-bottom: 0;
     box-sizing: border-box;
-    height: 80%;
-    padding: 0.2em;
-    // list-style: none;
+    list-style: none;
     overflow-x: hidden;
+    padding-inline-start: 0;
     p{
         margin: 0;
     }
   }
   .msg-wp {
-    overflow: auto; /* clearfix */
+    // overflow: auto; /* clearfix */
     // padding: 0.8em;
   }
   .msg {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     text-align: left;
     border-radius: 0 15px 15px 15px;
     background: #282C47;
     padding: 0.5em;
-    margin: 0;
     float: left;
     max-width: 55%;
-    // box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 5px #191C26;
     font-size: 1.5rem;
     color: white;
   }
   .owner {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     float: right;
     text-align: left;
     background: #E1463E;

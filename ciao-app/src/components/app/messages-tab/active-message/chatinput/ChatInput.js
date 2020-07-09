@@ -70,10 +70,12 @@ const ChatInput = () => {
                         text: input.value
                     }
                 })
+    
                 input.value = ''
                 refetch()
             }}>
                 <input
+                    placeholder="Type message..."
                     ref={node => {
                         input = node
                     }}
