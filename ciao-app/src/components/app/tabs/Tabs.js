@@ -60,7 +60,7 @@ const Tabs = () => {
             </NavLink>
 
                         {/* NEW */}
-                        <NavLink to="/ciao/social">
+                        {/* <NavLink to="/ciao/social">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.NETWORK2}
@@ -72,7 +72,7 @@ const Tabs = () => {
                     Social
                 </a>
                 </div>
-            </NavLink>
+            </NavLink> */}
 
 
 
@@ -85,7 +85,7 @@ const Tabs = () => {
                         color={pathname.includes('/contacts') ? '#E1473E' : '#EFC2C6'}
                     />
                 <a color={pathname.includes('/contacts') ? '#FB2046' : '#FB2046'}>
-                    Friends
+                    Contacts
                 </a>
                 </div>
             </NavLink>

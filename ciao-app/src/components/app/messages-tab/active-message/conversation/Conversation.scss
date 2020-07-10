@@ -1,5 +1,6 @@
 
 .messages {
+    height: 75%;
     border-top: 4px solid #2A2B3C;
     display: flex;
     flex-direction: column;
@@ -9,6 +10,8 @@
     list-style: none;
     overflow-x: hidden;
     padding-inline-start: 0;
+    
+    
     p{
         margin: 0;
     }
@@ -29,6 +32,7 @@
     box-shadow: 5px 5px 5px #191C26;
     font-size: 1.5rem;
     color: white;
+
   }
   .owner {
     margin-top: 0.5rem;

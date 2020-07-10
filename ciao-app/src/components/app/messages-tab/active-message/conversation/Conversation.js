@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { ACTIVE_CHAT, MY_ID } from './Resolvers'
 import './Conversation.scss'
@@ -16,27 +16,25 @@ function Conversation(){
             id: state.id
         }
     })
-    
+
 
     return(
  
     <ul className="messages">
-
-        {!loading && data && !loadingId && dataId &&(
+        {!loading && data && !loadingId && dataId && (
             <>
                 {data.chat.messages.map(info => (
                   <div>
-                  <li className="msg-wp">
-                      <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
-                      <p>{info.text}</p>
-                      {/* <p>{"Created at"} {info.createdAt}</p> */}
-                      </blockquote>
-                  </li>
+                    <li className="msg-wp">
+                        <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
+                        <p>{info.text}</p>
+                        {/* <p>{"Created at"} {info.createdAt}</p> */}
+                        </blockquote>
+                    </li>
                   </div>
                 ))}
             </>
         )}
-
     </ul>
 
     )
