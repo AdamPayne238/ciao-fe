@@ -3,8 +3,6 @@ import './Home.scss'
 import { useLocation } from 'react-router-dom'
 
 // SVG
-
-// SVG
 import Icon from '../../../global/Icon'
 import { ICONS } from '../../../global/IconConstants'
 
@@ -27,7 +25,7 @@ const Home = () => {
                             </div>
 
                             <div className="ciao-home-friend-count">
-                                <p>Friends: 12</p>
+                                <p>Contacts: 12</p>
                             </div>
 
                             <div className="ciao-home-member-date">
@@ -87,11 +85,9 @@ const Home = () => {
                                     />
                                     <p>Email</p>
                                 </div>
-
+                                
                             </div>
-
                         </div>
-                        
                     </div>
                 </div>
             )}

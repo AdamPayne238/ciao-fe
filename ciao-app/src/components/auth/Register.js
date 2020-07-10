@@ -8,8 +8,8 @@ import gql from 'graphql-tag'
 import './Auth.scss'
 
 const REGISTER_MUTATION = gql`
-    mutation RegisterMutation($first_name: String!, $last_name: String!, $email: String!, $password: String!, $city: String!, $state: String!){
-        register(first_name: $first_name, last_name: $last_name, email: $email, password: $password, city: $city, state: $state){
+    mutation RegisterMutation($first_name: String!, $last_name: String!, $email: String!, $password: String!){
+        register(first_name: $first_name, last_name: $last_name, email: $email, password: $password){
             token
         }
     }
