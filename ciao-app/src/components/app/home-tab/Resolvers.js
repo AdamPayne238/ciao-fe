@@ -7,6 +7,10 @@ export const ME = gql`
             first_name
             last_name
             email
+            github
+            linkedin
+            twitter
+            createdAt
             chats{
                 id
             }

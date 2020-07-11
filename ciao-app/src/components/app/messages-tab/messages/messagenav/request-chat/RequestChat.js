@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
 // Queries / Mutations
-import { GET_USERS, CREATE_CHAT } from './Resolvers'
+import { GET_USERS, CREATE_CHAT, MY_ID } from './Resolvers'
 
 // SVG
 import Icon from '../../../../../../global/Icon'
@@ -17,6 +17,8 @@ const RequestChat = () => {
     const [ select, setSelect ] = useState(false)
     const { loading, data, refetch } = useQuery(GET_USERS)
     const [ requestCreateChat ] = useMutation(CREATE_CHAT)
+    const { loading: loadingId, data: dataId} = useQuery(MY_ID)
+
 
     const [ submitRequest, setSubmitRequest ] = useState({
         success: false,
@@ -63,7 +65,7 @@ const RequestChat = () => {
                 />
             </div>
 
-            {!loading && data && open && (
+            {!loading && data && open && !loadingId && dataId && (
              
                 <div className="request-chat-modal-container">
 
@@ -81,7 +83,7 @@ const RequestChat = () => {
                 </div>
                     
                 <div className="request-chat-user-list">
-                    {data.users.map(info => (
+                    {data.users.map(info => (info.id !== dataId.me.id) && (
                         <div className="request-chat-single-user">
                             <p>{info.first_name} {info.last_name}</p>
                             <p>{info.email}</p>

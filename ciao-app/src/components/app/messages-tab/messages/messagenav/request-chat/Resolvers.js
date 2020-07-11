@@ -35,3 +35,11 @@ export const CREATE_CHAT = gql`
         }
     }
 `
+
+export const MY_ID = gql`
+    query{
+        me{
+            id
+        }
+    }
+`

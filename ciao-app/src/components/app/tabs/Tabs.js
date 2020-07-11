@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { useQuery } from '@apollo/react-hooks'
+import { ME } from './Resolvers'
 
 import EmptyProfilePic from '../../../images/empty-profile.png'
 
@@ -12,9 +14,14 @@ import './Tabs.scss'
 
 
 const Tabs = () => {
+
     const { pathname } = useLocation()
 
+    const { refetch, loading, data } = useQuery(ME)
+
+
     return(
+
         <div className="tab-container">
 
             <div className="profile-button">
@@ -25,9 +32,13 @@ const Tabs = () => {
                <img src={EmptyProfilePic}></img>
             </div>
 
-            <div className="profile-name">
-                <h2>Hello, User</h2>
-            </div>
+            {!loading && data && (
+                <div className="profile-name">
+                    <h2>Hello, {data.me.first_name}</h2>
+                </div>
+            )}
+
+        
 
             <NavLink to="/ciao/home" activeClassName='active'>
                 <div className="tab-row">
