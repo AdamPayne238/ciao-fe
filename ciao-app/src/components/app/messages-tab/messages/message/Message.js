@@ -37,9 +37,9 @@ const Message = () => {
                             <p>{par.first_name} {par.last_name}</p>
                           </div>
 
-                          <div className="message-stack-name">
+                          {/* <div className="message-stack-name">
                             <p>{par.email}</p>
-                          </div>
+                          </div> */}
 
                           <div className="message-stack-preview">
                             <p>recent message...</p>
