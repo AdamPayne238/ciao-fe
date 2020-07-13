@@ -4,20 +4,15 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-// OLD IMPORTS JULY 2nd 2020
-// import { ApolloClient } from 'apollo-client'
-// import { InMemoryCache } from 'apollo-cache-inmemory'
-// import { ApolloProvider } from 'react-apollo'
-
 // NEW IMPORTS ref: https://www.youtube.com/watch?v=iNStN6q_5As
-import  { ApolloClient, InMemoryCache } from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
+import  { ApolloClient, InMemoryCache } from 'apollo-boost'
+import { ApolloProvider } from '@apollo/react-hooks'
 
-// 
 import { createHttpLink } from 'apollo-link-http'
 import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
 import { AUTH_TOKEN } from './constants'
+ 
 
 const httpLink = createHttpLink({
   uri: 'https://ciao-be-2.herokuapp.com/'
@@ -69,6 +64,6 @@ ReactDOM.render(
     </ApolloProvider>
   </BrowserRouter>,
   document.getElementById('root')
-);
+)
 
 serviceWorker.unregister()
