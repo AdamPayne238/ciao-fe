@@ -1,5 +1,5 @@
 .chat-input-container{
-    // border: 2px solid blanchedalmond;
+
     background: #282C47;
     height: 8%;
     width: 94%;
@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .chat-input-icons{ 
         margin-left: 1rem;
         display: flex;
@@ -20,24 +21,29 @@
             width: 1.5rem;
             height: 1.5rem;
         }
-    }
-
-    input{
-        width: 80%;
-        background: #282C47 ;
-        border: #282C47;
-        font-size: 1.6rem;
-        padding-left: 1rem;
-        margin-left: 1rem;
-        border-left: 0.1px solid #6A6C84;
-        color: #6A6C84;
 
     }
-    input::placeholder{
-        color: #6A6C84;
-        font-size: 2rem;
-      }
-    
+
+    form{
+        width: 100%;
+
+        input{
+            background: #282C47 ;
+            border: #282C47;
+            font-size: 1.6rem;
+            padding-left: 1rem;
+            margin-left: 1rem;
+            border-left: 0.1px solid #6A6C84;
+            color: #6A6C84;
+        }
+
+        input::placeholder{
+            color: #6A6C84;
+            font-size: 2rem;
+          }
+
+    }
+
     button{
         margin-right: 1rem;
         text-align: center;
@@ -49,6 +55,7 @@
         border-radius: 50%;
         color: white;
         cursor: pointer;
+
         svg{
             height: 2rem;
             width: 2rem;
@@ -59,6 +66,7 @@
             transform: translateX(-50%);
           
         }
+        
     }
 }
 

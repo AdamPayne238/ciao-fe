@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useStore } from '../../../../../global/context/Store'
 import { CREATE_MESSAGE, ACTIVE_CHAT } from './Resolvers'
 import { useQuery, useMutation } from '@apollo/react-hooks'
@@ -11,7 +11,7 @@ import { ICONS } from '../../../../../global/IconConstants'
 const ChatInput = () => {
 
     let input
-    const {state, dispatch} = useStore()
+    const { state } = useStore()
     const [ createMessage ] = useMutation(CREATE_MESSAGE)
 
     // USE REFETCH TO REFRESH MESSAGES onSubmit

@@ -7,6 +7,8 @@ export const ME = gql`
             first_name
             last_name
             email
+            bio
+            status
             github
             linkedin
             twitter
