@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { useLocation } from 'react-router-dom'
 import { ME } from './Resolvers'
 import * as moment from 'moment'
+import UpdateModal from './subs/UpdateModal'
 
 // SVG
 import Icon from '../../../global/Icon'
@@ -40,49 +41,10 @@ const Home = () => {
                                 <h1>{data.me.first_name} {data.me.last_name}</h1>
                             </div>
 
-
+                            
                             {open === true && (
-                                <div className="update-user-modal">
-
-                                    <div>
-                                        <button onClick={() => setOpen(false)}>Close</button>
-                                    </div>
-
-                                    <form>
-
-                                        <h2>Bio</h2>
-                                            <input 
-                                                placeholder="Update Bio"
-                                            />
-
-                                        <h2>Status</h2>
-                                            <input 
-                                                placeholder="Update Bio"
-                                            />
-
-                                        <h2>GitHub</h2>
-                                            <input 
-                                                placeholder="Update Bio"
-                                            />
-
-                                        <h2>LinkedIn</h2>
-                                            <input 
-                                                placeholder="Update Bio"
-                                            />
-
-                                        <h2>Twitter</h2>
-                                            <input 
-                                                placeholder="Update Bio"
-                                            />
-
-                                        <h2>Email</h2>
-                                        <p>Toggle Email</p>
-                                            <input 
-                                                placeholder="Update Bio"
-                                            />
-
-                                    </form>
-
+                                <div>
+                                    <UpdateModal />
                                 </div>
                             )}
 
