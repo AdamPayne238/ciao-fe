@@ -19,3 +19,23 @@ export const ME = gql`
         }
     }
 `
+
+export const UPDATE_USER = gql`
+    mutation UPDATE_USER(
+        $id: String!
+        $bio: String
+        $status: String
+        $github: String
+        $linkedin: String
+        $twitter: String
+    ){
+        updateUser(
+            id: $id
+            bio: $bio
+            status: $status
+            github: $github
+            linkedin: $linkedin
+            twitter: $twitter
+        )
+    }
+`

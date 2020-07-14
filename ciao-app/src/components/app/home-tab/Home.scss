@@ -16,8 +16,6 @@
         flex-direction: column;
         overflow-x: hidden;
 
-      
-
         p{
             color: white;
             font-size: 1.5rem;
@@ -29,20 +27,25 @@
             font-weight: bolder;
         }
 
+        button{
+            font-size: 1rem;
+            text-align: center;
+            height: 2rem;
+            width: 7rem;
+            background: #D74344;
+            border: #D74344;
+            border-radius: 1rem;
+            color: white;
+            cursor: pointer;
+        }
 
         .ciao-home-info-container{
             margin: 2rem 3rem 3rem 3rem;
-            
-
-     
-      
 
             .ciao-home-underline{
                 border-bottom: 4px solid white;
                 margin: 3rem 0 3rem 0;
             }
-        
-            
 
             .ciao-home-username{
 
@@ -55,34 +58,6 @@
                 }
             }
 
-            .ciao-home-friend-count{
-                // border: 2px solid hotpink;
-                // p{
-                //     margin: 1rem 0 1rem 0;
-                // }
-    
-            }
-
-            .ciao-home-member-date{
-                // border: 2px solid fuchsia;
-                // p{
-                //     margin: 1rem 0 1rem 0;                
-                // }
-
-            }
-
-        }
-
-        .ciao-home-bio{
-       
-            // border: 2px solid lime;
-    
-        }
-
-        .ciao-home-status{
-          
-            // border: 2px solid turquoise;
-  
         }
 
         .ciao-home-svg-contact{
@@ -91,37 +66,29 @@
             .ciao-home-github{
                 display: flex;
                 align-items: center;
-
             }
             
             .ciao-home-linkedin{
                 display: flex;
                 align-items: center;
-
             }
 
             .ciao-home-twitter{
                 display: flex;
                 align-items: center;
-
             }
 
             .ciao-home-email{
                 display: flex;
                 align-items: center;
-
             }
 
             svg{
                 height: 4.5rem;
                 width: 4.5rem;
-                
             }
 
         }
-
-
-
 
     }
 

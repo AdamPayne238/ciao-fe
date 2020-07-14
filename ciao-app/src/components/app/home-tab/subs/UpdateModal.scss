@@ -1,10 +1,59 @@
 .update-user-modal{
+    
     padding: 2rem;
     position: absolute;
     overflow-x: hidden;
     background: #181926;
     border: .8rem solid #E1463E;
     height: 37rem;
-    width: 76rem;
+    width: 40rem;
     border-radius: 2rem;
+
+    h1{
+        color: white;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    button{
+        font-size: 1.5rem;
+        text-align: center;
+        height: 3rem;
+        width: 9.5rem;
+        background: #D74344;
+        border: #D74344;
+        border-radius: 1rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    form{
+        width: 100%;
+
+        input{
+            height: 4rem;
+            width: 39rem;
+            background: #282C47 ;
+            border: #282C47;
+            font-size: 1.6rem;
+            padding-left: 1rem;
+            color: #6A6C84;
+            border-radius: 25px;
+        }
+
+        input::placeholder{
+            color: #6A6C84;
+            font-size: 2rem;
+          }
+
+    }
+
+}
+
+
+input:focus{
+    outline: none;
+}
+button:focus{
+        outline: none;
 }
