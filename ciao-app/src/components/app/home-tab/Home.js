@@ -44,7 +44,12 @@ const Home = () => {
                             
                             {open === true && (
                                 <div>
-                                    <UpdateModal />
+                                    <UpdateModal
+                                    id={data.me.id}
+                                    open={open}
+                                    setOpen={setOpen}
+                                    refetch={refetch}
+                                    />
                                 </div>
                             )}
 

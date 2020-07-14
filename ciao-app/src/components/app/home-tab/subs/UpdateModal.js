@@ -1,46 +1,97 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './UpdateModal.scss'
+import { UPDATE_USER } from '../Resolvers'
+import { useMutation } from '@apollo/react-hooks'
 
 
-const UpdateModal = () => {
+const UpdateModal = (props) => {
+
+    // const [ visibility, setVisibility ] = useState(false)
+    const [ updateUser ] = useMutation(UPDATE_USER)
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormInput({
+          ...formInput,
+          [name]: value
+          })
+        }
+
+    const [formInput, setFormInput] = useState({
+        bio: '',
+        status: '',
+        github: '',
+        linkedin: '',
+        twitter: ''
+        })
+
+    const handleSubmit = () => {
+        updateUser({
+            variables: {
+               id: props.id,
+               ...formInput
+            }
+        })
+    }
 
   return(
     <div className="update-user-modal">
 
+        <button onClick={() => props.setOpen(false)}>
+            Close
+        </button>
+
+        <h1>Update User Info</h1>
+
     <form>
-
-        <h2>Bio</h2>
+        <h2>Bio:</h2>
             <input 
-                placeholder="Update Bio"
+				type='text'
+				name='bio'
+				placeholder='Update Bio...'
+				value={formInput.bio}
+				onChange={(e) => handleChange(e, setFormInput, formInput)}
             />
 
-        <h2>Status</h2>
+        <h2>Status:</h2>
             <input 
-                placeholder="Update Bio"
+                type='text'
+				name='status'
+				placeholder='Update Status...'
+				value={formInput.status}
+				onChange={(e) => handleChange(e, setFormInput, formInput)}
             />
 
-        <h2>GitHub</h2>
+        <h2>GitHub:</h2>
             <input 
-                placeholder="Update Bio"
+                type='text'
+				name='github'
+				placeholder='Update Bio...'
+				value={formInput.github}
+				onChange={(e) => handleChange(e, setFormInput, formInput)}
             />
 
-        <h2>LinkedIn</h2>
+        <h2>LinkedIn:</h2>
             <input 
-                placeholder="Update Bio"
+          		type='text'
+				name='linkedin'
+				placeholder='Update Bio...'
+				value={formInput.linkedin}
+				onChange={(e) => handleChange(e, setFormInput, formInput)}
             />
 
-        <h2>Twitter</h2>
+        <h2>Twitter:</h2>
             <input 
-                placeholder="Update Bio"
-                
+   				type='text'
+				name='twitter'
+				placeholder='Update Bio...'
+				value={formInput.twitter}
+				onChange={(e) => handleChange(e, setFormInput, formInput)}
             />
-
-        <h2>Email</h2>
-            <input 
-                placeholder="Update Bio"
-            />
-
     </form>
+
+    <button onClick={handleSubmit}>Submit</button>
+
 
 </div>
 
