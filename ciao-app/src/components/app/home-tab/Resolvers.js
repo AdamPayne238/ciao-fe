@@ -36,6 +36,13 @@ export const UPDATE_USER = gql`
             github: $github
             linkedin: $linkedin
             twitter: $twitter
-        )
+        ){
+            id
+            bio
+            status
+            github
+            linkedin
+            twitter
+        }
     }
 `

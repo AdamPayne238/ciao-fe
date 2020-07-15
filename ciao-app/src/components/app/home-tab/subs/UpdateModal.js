@@ -32,6 +32,7 @@ const UpdateModal = (props) => {
                ...formInput
             }
         })
+        props.setOpen(false)
     }
 
   return(
