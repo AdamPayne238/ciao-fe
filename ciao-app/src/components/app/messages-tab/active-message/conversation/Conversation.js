@@ -25,7 +25,7 @@ function Conversation(){
             <>
                 {data.chat.messages.map(info => (
                   <div>
-                    <li className="msg-wp">
+                    <li id="msg" className="msg-wp">
                         <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
                         <p>{info.text}</p>
                         {/* <p>{"Created at"} {info.createdAt}</p> */}
