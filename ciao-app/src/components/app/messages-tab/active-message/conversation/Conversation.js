@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { ACTIVE_CHAT, MY_ID } from './Resolvers'
 import './Conversation.scss'

@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { ME } from './Resolvers'
 import * as moment from 'moment'
 import UpdateModal from './subs/UpdateModal'
+import Linkify from 'react-linkify'
 
 // SVG
 import Icon from '../../../global/Icon'
@@ -96,7 +97,7 @@ const Home = () => {
                                         height={32}
                                         color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
                                     />
-                                    <p>{data.me.github}</p>
+                                    <Linkify><p>{data.me.github}</p></Linkify>
                                 </div>
 
                                 <div className="ciao-home-linkedin">
@@ -106,7 +107,7 @@ const Home = () => {
                                         height={32}
                                         color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
                                     />
-                                    <p>{data.me.linkedin}</p>
+                                    <Linkify><p>{data.me.linkedin}</p></Linkify>
                                 </div>
 
                                 <div className="ciao-home-twitter">
@@ -116,7 +117,8 @@ const Home = () => {
                                         height={32}
                                         color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
                                     />
-                                    <p>{data.me.twitter}</p>
+                                    
+                                    <Linkify><p>{data.me.twitter}</p></Linkify>
                                 </div>
 
                                 <div className="ciao-home-email">
@@ -126,7 +128,7 @@ const Home = () => {
                                         height={32}
                                         color={pathname.includes('/home') ? '#E1473E' : '#EFC2C6'}
                                     />
-                                    <p>{data.me.email}</p>
+                                    <Linkify><p>{data.me.email}</p></Linkify>
                                 </div>
 
                             </div>
