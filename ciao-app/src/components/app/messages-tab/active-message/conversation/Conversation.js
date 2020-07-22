@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { ACTIVE_CHAT, MY_ID } from './Resolvers'
 import './Conversation.scss'
@@ -6,6 +6,8 @@ import { useStore } from '../../../../../global/context/Store'
 
 
 function Conversation(){
+
+    const messageRef = useRef()
 
     const { state } = useStore()
 
@@ -17,6 +19,15 @@ function Conversation(){
         }
     })
 
+    useEffect(() => {
+        if(messageRef.current){
+            messageRef.current.scrollIntoView({
+                // behavior: 'smooth',
+                block: 'start',
+            })
+        } 
+    })
+
 
     return(
  
@@ -25,7 +36,7 @@ function Conversation(){
             <>
                 {data.chat.messages.map(info => (
                   <div>
-                    <li id="msg" className="msg-wp">
+                    <li ref={messageRef} id="msg" className="msg-wp">
                         <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
                         <p>{info.text}</p>
                         {/* <p>{"Created at"} {info.createdAt}</p> */}
