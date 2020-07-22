@@ -22,10 +22,10 @@ function Conversation(){
     useEffect(() => {
         if(messageRef.current){
             messageRef.current.scrollIntoView({
-                behavior: 'smooth',
+                // behavior: 'smooth',
                 block: 'start',
             })
-        }
+        } 
     })
 
 
