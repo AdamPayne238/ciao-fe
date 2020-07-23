@@ -12,8 +12,13 @@ import { createHttpLink } from 'apollo-link-http'
 import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
 import { AUTH_TOKEN } from './constants'
- 
 
+// Subscriptions
+import { split } from 'apollo-link'
+import { WebSocketLink } from 'apollo-link-ws'
+import { getMainDefinition } from 'apollo-utilities'
+
+ 
 const httpLink = createHttpLink({
   uri: 'https://ciao-be-2.herokuapp.com/'
 })
@@ -28,34 +33,30 @@ const authLink = setContext((_, {headers}) => {
   }
 })
 
-const link = authLink.concat(httpLink)
+const wsLink = new WebSocketLink({
+  uri: 'ws://ciao-be-2.herokuapp.com/',
+  options: {
+    reconnect: true,
+    connectionParams: {
+      token: localStorage.getItem(AUTH_TOKEN),
+    }
+  }
+})
 
-const cache = new InMemoryCache()
+const link = split(
+  ({ query }) => {
+    const { kind, operation } = getMainDefinition(query)
+    return kind === 'OperationDefinition' && operation === 'subscription'
+  },
+  wsLink,
+  authLink.concat(httpLink)
+)
 
 const client = new ApolloClient({
   link,
-  cache,
+  cache: new InMemoryCache(),
   resolvers: {},
 })
-
-// This Block:
-// - Writes data directly to inMemoryCache 
-// - Sets up placeholders to be manipulated
-// cache.writeData({
-//   data: {
-//     clientState: {
-//       defaults: {
-//         user: {
-//           userId: "Not Set",
-//         },
-//         chat: {
-//           chatId: 'Not Set',
-//         }
-//       }
-//     }
-//   }
-// })
-// console.log("INDEX CACHE", cache)
 
 ReactDOM.render(
   <BrowserRouter>
