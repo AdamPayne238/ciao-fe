@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
+
 // Queries / Mutations
 import { GET_USERS, CREATE_CHAT, MY_ID } from './Resolvers'
 
@@ -49,6 +50,25 @@ const RequestChat = () => {
             })
         })
     }
+
+    // SUBSCRIPTIONS
+    // const _subscribeToNewChats = subscribeToMore => {
+    //     subscribeToMore({
+    //         document: NEW_CHAT_SUBSCRIPTION,
+    //         updateQuery: (prev, { subscriptionData }) => {
+    //             if (!subscriptionData) return prev
+    //             const newChat = subscriptionData.data.newChat
+    //             const exists = prev.chat.find(({ id }) => id === newChat.id)
+    //             if (exists) return prev
+
+    //             return Object.assign({}, prev, {
+    //                 chat: {
+    //                     chats: []
+    //                 }
+    //             })
+    //         }
+    //     })
+    // }
 
     return (
         <div>

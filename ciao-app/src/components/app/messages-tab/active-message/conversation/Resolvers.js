@@ -52,3 +52,12 @@ export const MY_ID = gql`
         }
     }
 `
+
+export const NEW_MESSAGE_SUBSCRIPTION = gql`
+    subscription {
+        newMessage {
+            id
+            text
+        }
+    }
+`

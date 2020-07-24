@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
-import { useQuery } from '@apollo/react-hooks'
-import { ACTIVE_CHAT, MY_ID } from './Resolvers'
+import { useQuery, useSubscription } from '@apollo/react-hooks'
+import { ACTIVE_CHAT, MY_ID, NEW_MESSAGE_SUBSCRIPTION } from './Resolvers'
 import './Conversation.scss'
 import { useStore } from '../../../../../global/context/Store'
 
@@ -8,10 +8,9 @@ import { useStore } from '../../../../../global/context/Store'
 function Conversation(){
 
     const messageRef = useRef()
-
     const { state } = useStore()
-
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
+    useSubscription(NEW_MESSAGE_SUBSCRIPTION)
 
     const { loading, data } = useQuery(ACTIVE_CHAT, {
         variables: {

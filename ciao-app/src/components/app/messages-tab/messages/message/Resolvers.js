@@ -69,3 +69,11 @@ export const TOGGLE_CHAT = gql`
         }
     }
 `
+
+export const NEW_CHAT_SUBSCRIPTION = gql`
+    subscription {
+        newChat {
+            id
+        }
+    }
+`

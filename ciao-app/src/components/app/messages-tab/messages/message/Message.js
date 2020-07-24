@@ -1,6 +1,6 @@
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
-import { ME, MY_ID } from './Resolvers'
+import { useQuery, useSubscription } from '@apollo/react-hooks'
+import { ME, MY_ID, NEW_CHAT_SUBSCRIPTION } from './Resolvers'
 import EmptyProfilePic from '../../../../../images/empty-profile.png'
 import './Message.scss'
 import { useStore } from '../../../../../global/context/Store'
@@ -10,6 +10,7 @@ const Message = () => {
     const { dispatch } = useStore()
     const { loading, data } = useQuery(ME)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
+    useSubscription(NEW_CHAT_SUBSCRIPTION)
 
     return(
       

@@ -39,7 +39,9 @@ const Login = (props) => {
             <div className="auth-header">
                 <h1>Login</h1>
             </div>
+     
             <div>
+                
                 <input
                     value={email}
                     onChange={e => setEmail( e.target.value )}
@@ -67,7 +69,10 @@ const Login = (props) => {
                     </button>
                     )}
                 </Mutation>
+                
             </div>
+          
+            
             <div className="re-route-auth">
             <p>Don't have an account? <Link to="/register">Register</Link></p>
             </div>

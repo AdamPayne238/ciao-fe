@@ -23,7 +23,6 @@ export const GET_USERS = gql`
     }
 `
 
-// WORKING
 export const CREATE_CHAT = gql`
     mutation CREATE_CHAT(
         $participants: String!
