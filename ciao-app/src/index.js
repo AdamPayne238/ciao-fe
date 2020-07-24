@@ -52,9 +52,11 @@ const link = split(
   authLink.concat(httpLink)
 )
 
+const cache = new InMemoryCache()
+
 const client = new ApolloClient({
   link,
-  cache: new InMemoryCache(),
+  cache,
   resolvers: {},
 })
 
