@@ -34,7 +34,7 @@ const authLink = setContext((_, {headers}) => {
 })
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://ciao-be-2.herokuapp.com/',
+  uri: 'ws://ciao-be-2.herokuapp.com/graphql',
   options: {
     reconnect: true,
     connectionParams: {
