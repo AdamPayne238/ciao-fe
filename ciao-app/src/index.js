@@ -18,7 +18,7 @@ import { split } from 'apollo-link'
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 
- 
+
 const httpLink = createHttpLink({
   uri: 'https://ciao-be-2.herokuapp.com/'
 })

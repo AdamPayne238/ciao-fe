@@ -5,6 +5,7 @@ import EmptyProfilePic from '../../../../../images/empty-profile.png'
 import './Message.scss'
 import { useStore } from '../../../../../global/context/Store'
 
+
 const Message = () => {
 
     const { dispatch } = useStore()
