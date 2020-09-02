@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStore } from '../../../../../global/context/Store'
-import { CREATE_MESSAGE, ACTIVE_CHAT } from './Resolvers'
-import { useQuery, useMutation } from '@apollo/react-hooks'
+import { CREATE_MESSAGE, ACTIVE_CHAT, NEW_MESSAGE_SUBSCRIPTION } from './Resolvers'
+import { useQuery, useMutation, useSubscription } from '@apollo/react-hooks'
 
 import './ChatInput.scss'
 import Icon from '../../../../../global/Icon'
@@ -13,6 +13,7 @@ const ChatInput = () => {
     let input
     const { state } = useStore()
     const [ createMessage ] = useMutation(CREATE_MESSAGE)
+    useSubscription(NEW_MESSAGE_SUBSCRIPTION)
 
     // USE REFETCH TO REFRESH MESSAGES onSubmit
     const { refetch } = useQuery(ACTIVE_CHAT, {
@@ -63,7 +64,7 @@ const ChatInput = () => {
             </div>
 
             <form onSubmit={e => {
-                e.preventDefault()
+                e.preventDefault() // stops browser from reloading on input
                 createMessage({
                     variables: {
                         chatId: state.id,
@@ -72,7 +73,7 @@ const ChatInput = () => {
                 })
     
                 input.value = ''
-                refetch()
+                refetch() // refetches query data to update new messages
             }}>
                 <input
                     placeholder="Type message..."

@@ -71,7 +71,7 @@ const Tabs = () => {
             </NavLink>
 
                         {/* NEW */}
-                        {/* <NavLink to="/ciao/social">
+                        <NavLink to="/ciao/social">
                 <div className="tab-row">
                 <Icon
                         icon={ICONS.NETWORK2}
@@ -83,7 +83,7 @@ const Tabs = () => {
                     Social
                 </a>
                 </div>
-            </NavLink> */}
+            </NavLink>
 
 
 

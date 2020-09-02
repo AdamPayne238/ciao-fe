@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker'
 import  { ApolloClient, InMemoryCache } from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 
-import { createHttpLink } from 'apollo-link-http'
+import { createHttpLink, HttpLink } from 'apollo-link-http'
 import { BrowserRouter } from 'react-router-dom'
 import { setContext } from 'apollo-link-context'
 import { AUTH_TOKEN } from './constants'
@@ -18,8 +18,8 @@ import { split } from 'apollo-link'
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 
- 
-const httpLink = createHttpLink({
+
+const httpLink = new HttpLink({
   uri: 'https://ciao-be-2.herokuapp.com/'
 })
 
@@ -34,12 +34,12 @@ const authLink = setContext((_, {headers}) => {
 })
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://ciao-be-2.herokuapp.com/graphql',
+  uri: `wss://ciao-be-2.herokuapp.com/`,
   options: {
     reconnect: true,
     connectionParams: {
       token: localStorage.getItem(AUTH_TOKEN),
-    }
+    },
   }
 })
 

@@ -8,6 +8,7 @@ const ActivityUpdateContext = React.createContext()
 export function useActivity() {
     return useContext(ActivityContext)
 }
+
 export function useActivityUpdate() {
     return useContext(ActivityUpdateContext)
 }
