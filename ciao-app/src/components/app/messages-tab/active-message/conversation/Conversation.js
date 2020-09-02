@@ -12,7 +12,7 @@ function Conversation(){
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
     useSubscription(NEW_MESSAGE_SUBSCRIPTION)
 
-    const { loading, data } = useQuery(ACTIVE_CHAT, {
+    const { loading, data, refetch } = useQuery(ACTIVE_CHAT, {
         variables: {
             id: state.id
         }
@@ -31,7 +31,7 @@ function Conversation(){
     return(
  
     <ul className="messages">
-        {!loading && data && !loadingId && dataId && (
+        {!loading && data && !loadingId && dataId && refetch() && (
             <>
                 {data.chat.messages.map(info => (
                   <div>
