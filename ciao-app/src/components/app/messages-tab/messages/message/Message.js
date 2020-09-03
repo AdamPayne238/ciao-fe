@@ -20,12 +20,13 @@ const Message = () => {
           <>
             {data.me.chats.map(chatInfo => (
               console.log("chatInfo", chatInfo),
+                
               
               <div className="message-stack">
-                
+
                 <div 
                   className="message-stack-container"
-                  onClick={() => dispatch({type: 'toggle-on', id: chatInfo.id }) }
+                  onClick={() => dispatch({type: 'toggle-on', id: chatInfo.id, participants: chatInfo.participants }) }
                 >
             
                   <div className="message-stack-img">

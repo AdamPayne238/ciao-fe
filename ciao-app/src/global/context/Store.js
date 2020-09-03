@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 const StoreContext = createContext();
-const initialState = {active: false, id: ""};
+const initialState = {active: false, id: "", participants: []};
 
 
 const reducer = (state, action) => {
@@ -10,15 +10,13 @@ const reducer = (state, action) => {
       return {
         active: true,
         id: action.id,
-        firstName: action.first_name,
-        // lastName: action.last_name,
+        participants: action.participants,
       }
     case "toggle-off":
       return {
         active: false,
         id: action.id,
-        firstName: action.first_name,
-        // lastName: action.last_name,
+        participants: action.participants,
       }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

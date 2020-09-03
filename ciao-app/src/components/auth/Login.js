@@ -81,12 +81,12 @@ const Login = (props) => {
                 variables={{ email, password }}
                 onCompleted={data => _confirm(data)}
             >
-                    {mutation => (
-                    <button onClick={mutation}>
-                        {'login'}
-                    </button>
-                    )}
-                </Mutation>
+                {mutation => (
+                <button onClick={mutation}>
+                    {'login'}
+                </button>
+                )}
+            </Mutation>
                 
             </div>
           
