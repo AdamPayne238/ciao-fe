@@ -12,6 +12,41 @@
                 color: #1F2032;
             }
         }
+
+        .password-auth-input{
+
+            input{
+                width: 25rem;
+                height: 3.5rem;
+                font-size: 1.2rem;
+                margin: 15px 0;
+                border-radius: 15px;
+                border: none;
+                text-align: center;
+                transition: 0.2s ease-in;
+                background: #1F2032;
+                font-size: 1.8rem;
+                color: white;
+                &:hover {
+                    text-decoration: none;
+                    color: white;
+                    background: #282C47;
+                    }
+                }
+                input::placeholder{
+                    color: #6A6C84;
+                    font-size: 2rem;
+                    &:hover{
+                        color: white;
+                    }
+                  }
+
+                  i{
+                      margin: 2px;
+                    //   color: black;
+                  }
+
+        }
     
         input{
             width: 25rem;

@@ -7,6 +7,10 @@ import gql from 'graphql-tag'
 //Style
 import './Auth.scss'
 
+// SVG
+import Icon from '../../global/Icon'
+import { ICONS } from '../../global/IconConstants'
+
 const REGISTER_MUTATION = gql`
     mutation RegisterMutation($first_name: String!, $last_name: String!, $email: String!, $password: String!){
         register(first_name: $first_name, last_name: $last_name, email: $email, password: $password){
@@ -22,6 +26,13 @@ const Register = (props) => {
     const [ last_name, setLastName ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+
+    // TOGGLE VISIBILITY
+    const [ hidePassword, setHidePassword ] = useState(false)
+
+    const togglePasswordVisibility = () => {
+        setHidePassword(hidePassword ? false : true)
+    }
 
     const confirm = async data => {
         const {token} = data.register
@@ -62,13 +73,22 @@ const Register = (props) => {
                 placeholder="Email"
             />
             </div>
+
             <div>
-            <input
-                value={password}
-                onChange={e => setPassword( e.target.value )}
-                type="text"
-                placeholder="Password"
-            />
+                <input
+                    value={password}
+                    onChange={e => setPassword( e.target.value )}
+                    type={hidePassword ? "text" : "password"}
+                    placeholder="Password"
+                />
+                <i onClick={togglePasswordVisibility}>
+                    <Icon
+                        icon={ICONS.EYE}
+                        width={32}
+                        height={32}
+                        onClick={togglePasswordVisibility}
+                    />
+                </i>
             </div>
 
             <div className="auth-mutation">
