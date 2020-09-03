@@ -1,9 +1,8 @@
-import React, { useState} from "react"
+import React, { useState } from "react"
 import {Link} from 'react-router-dom'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 import {AUTH_TOKEN} from '../../constants'
-
 
 //style
 import './Auth.scss'
@@ -21,6 +20,13 @@ const Login = (props) => {
     const [ login, setLogin ] = useState(true)
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+
+    // TOGGLE VISIBILITY
+    const [ hidePassword, setHidePassword ] = useState(true)
+    
+    const togglePasswordVisibility = () => {
+        setHidePassword(hidePassword ? true : false)
+    }
 
     const saveUserData = token => {
 
@@ -40,8 +46,8 @@ const Login = (props) => {
                 <h1>Login</h1>
             </div>
      
+           
             <div>
-                
                 <input
                     value={email}
                     onChange={e => setEmail( e.target.value )}
@@ -56,7 +62,9 @@ const Login = (props) => {
                     type="text"
                     placeholder="Password"
                 />
+                <i onClick={togglePasswordVisibility()}> </i>{" "}
             </div>
+          
             <div className="auth-mutation">
             <Mutation
                 mutation={LOGIN_MUTATION}
