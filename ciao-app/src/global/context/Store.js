@@ -9,12 +9,16 @@ const reducer = (state, action) => {
     case "toggle-on":
       return {
         active: true,
-        id: action.id
+        id: action.id,
+        firstName: action.first_name,
+        // lastName: action.last_name,
       }
     case "toggle-off":
       return {
         active: false,
-        id: action.id
+        id: action.id,
+        firstName: action.first_name,
+        // lastName: action.last_name,
       }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -23,7 +27,7 @@ const reducer = (state, action) => {
 
 export const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // console.log("STORE STATE IN Store.js", state)
+  console.log("STORE STATE IN Store.js", state)
 
   return (
     <StoreContext.Provider value={{state, dispatch}}>
