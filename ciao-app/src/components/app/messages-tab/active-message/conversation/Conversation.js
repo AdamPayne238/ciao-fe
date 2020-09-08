@@ -34,10 +34,13 @@ function Conversation(){
         {!loading && data && !loadingId && dataId && refetch() && (
             <>
                 {data.chat.messages.map(info => (
+                    // console.log("conversation shiiiit", info),
                   <div>
                     <li ref={messageRef} id="msg" className="msg-wp">
                         <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
-                        <p>{info.text}</p>
+                        {/* <div className="chat"> */}
+                            <p>{info.text.replace(/(.{30})/g, "$1\n")}</p>
+                        {/* </div> */}
                         {/* <p>{"Created at"} {info.createdAt}</p> */}
                         </blockquote>
                     </li>

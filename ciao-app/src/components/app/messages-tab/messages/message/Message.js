@@ -19,12 +19,14 @@ const Message = () => {
         {!loading && data && !loadingId && dataId &&(
           <>
             {data.me.chats.map(chatInfo => (
+              console.log("chatInfo", chatInfo),
+                
               
               <div className="message-stack">
-                
+
                 <div 
                   className="message-stack-container"
-                  onClick={() => dispatch({type: 'toggle-on', id: chatInfo.id }) }
+                  onClick={() => dispatch({type: 'toggle-on', id: chatInfo.id, participants: chatInfo.participants }) }
                 >
             
                   <div className="message-stack-img">
@@ -38,10 +40,6 @@ const Message = () => {
                           <div className="message-stack-name">
                             <p>{par.first_name} {par.last_name}</p>
                           </div>
-
-                          {/* <div className="message-stack-name">
-                            <p>{par.email}</p>
-                          </div> */}
 
                           <div className="message-stack-preview">
                             <p>recent message...</p>

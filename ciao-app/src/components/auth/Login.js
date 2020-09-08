@@ -1,12 +1,15 @@
-import React, { useState} from "react"
+import React, { useState, useEffect } from "react"
 import {Link} from 'react-router-dom'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 import {AUTH_TOKEN} from '../../constants'
 
-
 //style
 import './Auth.scss'
+
+// SVG
+import Icon from '../../global/Icon'
+import { ICONS } from '../../global/IconConstants'
 
 const LOGIN_MUTATION = gql`
     mutation LoginMutation($email: String!, $password: String!){
@@ -22,10 +25,15 @@ const Login = (props) => {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
 
-    const saveUserData = token => {
+    // TOGGLE VISIBILITY
+    const [ hidePassword, setHidePassword ] = useState(false)
 
+    const togglePasswordVisibility = () => {
+        setHidePassword(hidePassword ? false : true)
+    }
+
+    const saveUserData = token => {
         localStorage.setItem(AUTH_TOKEN, token)
-        
     }
 
     const _confirm = async data => {
@@ -36,12 +44,12 @@ const Login = (props) => {
 
     return(
         <div className="auth-form-container">
+
             <div className="auth-header">
                 <h1>Login</h1>
             </div>
-     
+           
             <div>
-                
                 <input
                     value={email}
                     onChange={e => setEmail( e.target.value )}
@@ -49,26 +57,36 @@ const Login = (props) => {
                     placeholder="Email"
                 />
             </div>
-            <div>
+
+            <div className="password-auth-input">
                 <input
                     value={password}
                     onChange={e => setPassword( e.target.value )}
-                    type="text"
+                    // type="text"
+                    type={hidePassword ? "text" : "password"}
                     placeholder="Password"
                 />
+                <i onClick={togglePasswordVisibility}>
+                    <Icon
+                        icon={ICONS.EYE}
+                        width={32}
+                        height={32}
+                    />
+                </i>
             </div>
+          
             <div className="auth-mutation">
             <Mutation
                 mutation={LOGIN_MUTATION}
                 variables={{ email, password }}
                 onCompleted={data => _confirm(data)}
             >
-                    {mutation => (
-                    <button onClick={mutation}>
-                        {'login'}
-                    </button>
-                    )}
-                </Mutation>
+                {mutation => (
+                <button onClick={mutation}>
+                    {'login'}
+                </button>
+                )}
+            </Mutation>
                 
             </div>
           

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 const StoreContext = createContext();
-const initialState = {active: false, id: ""};
+const initialState = {active: false, id: "", participants: []};
 
 
 const reducer = (state, action) => {
@@ -9,12 +9,14 @@ const reducer = (state, action) => {
     case "toggle-on":
       return {
         active: true,
-        id: action.id
+        id: action.id,
+        participants: action.participants,
       }
     case "toggle-off":
       return {
         active: false,
-        id: action.id
+        id: action.id,
+        participants: action.participants,
       }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -23,7 +25,7 @@ const reducer = (state, action) => {
 
 export const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // console.log("STORE STATE IN Store.js", state)
+  console.log("STORE STATE IN Store.js", state)
 
   return (
     <StoreContext.Provider value={{state, dispatch}}>
