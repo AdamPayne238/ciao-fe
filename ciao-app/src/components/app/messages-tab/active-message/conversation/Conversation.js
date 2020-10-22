@@ -38,10 +38,10 @@ function Conversation(){
                   <div>
                     <li ref={messageRef} id="msg" className="msg-wp">
                         <blockquote className={info.user.id === dataId.me.id ? 'msg owner' : "msg"}>
-                        {/* <div className="chat"> */}
-                            <p>{info.text.replace(/(.{30})/g, "$1\n")}</p>
-                        {/* </div> */}
-                        {/* <p>{"Created at"} {info.createdAt}</p> */}
+               
+                            <p>{info.text}</p>
+                            
+                            {/* <p>{info.text.replace(/(.{30})/g,"$1\n")}</p> */}
                         </blockquote>
                     </li>
                   </div>
