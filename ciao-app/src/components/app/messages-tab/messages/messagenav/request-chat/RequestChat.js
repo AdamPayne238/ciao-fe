@@ -51,24 +51,6 @@ const RequestChat = () => {
         })
     }
 
-    // SUBSCRIPTIONS
-    // const _subscribeToNewChats = subscribeToMore => {
-    //     subscribeToMore({
-    //         document: NEW_CHAT_SUBSCRIPTION,
-    //         updateQuery: (prev, { subscriptionData }) => {
-    //             if (!subscriptionData) return prev
-    //             const newChat = subscriptionData.data.newChat
-    //             const exists = prev.chat.find(({ id }) => id === newChat.id)
-    //             if (exists) return prev
-
-    //             return Object.assign({}, prev, {
-    //                 chat: {
-    //                     chats: []
-    //                 }
-    //             })
-    //         }
-    //     })
-    // }
 
     return (
         <div>
