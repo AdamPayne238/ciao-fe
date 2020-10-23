@@ -1,11 +1,11 @@
 import React from 'react'
 import './SearchConvo.scss'
-
-//SVG
 import Icon from '../../../../../global/Icon'
 import { ICONS } from '../../../../../global/IconConstants'
 
+
 const SearchConvo = () => {
+
     return(
         <div className="search-convo-container">
             

@@ -3,8 +3,8 @@ import Message from './message/Message'
 import SearchConvo from './searchconvo/SearchConvo'
 import MessageNav from './messagenav/MessageNav'
 import './Messages.scss'
-
 import { useLocation } from 'react-router-dom'
+
 
 const Messages = () => {
 
@@ -21,7 +21,6 @@ const Messages = () => {
             )}
         </>
          
-     
     )
 }
 

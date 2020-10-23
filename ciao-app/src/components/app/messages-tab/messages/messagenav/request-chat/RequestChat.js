@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/react-hooks'
-
-
-// Queries / Mutations
 import { GET_USERS, CREATE_CHAT, MY_ID } from './Resolvers'
-
-// SVG
 import Icon from '../../../../../../global/Icon'
 import { ICONS } from '../../../../../../global/IconConstants'
-
-// Styles
 import './RequestChat.scss'
+
 
 const RequestChat = () => {
 
@@ -19,7 +13,6 @@ const RequestChat = () => {
     const { loading, data, refetch } = useQuery(GET_USERS)
     const [ requestCreateChat ] = useMutation(CREATE_CHAT)
     const { loading: loadingId, data: dataId} = useQuery(MY_ID)
-
 
     const [ submitRequest, setSubmitRequest ] = useState({
         success: false,
@@ -39,8 +32,7 @@ const RequestChat = () => {
                 message: 'Request sent!'
             })
             setOpen(false)
-            // Refreshes List in Message.js when chat is created.
-            refetch()
+            refetch() // Refreshes List in Message.js when chat is created.
         })
         .catch(err => {
             console.log('Request Chat Error', err)
@@ -71,36 +63,36 @@ const RequestChat = () => {
              
                 <div className="request-chat-modal-container">
 
-                <div className="request-chat-modal-close">
-                    <button onClick={() => (setOpen(false), setSelect(false))}>Close</button>
-                </div>
+                    <div className="request-chat-modal-close">
+                        <button onClick={() => (setOpen(false), setSelect(false))}>Close</button>
+                    </div>
 
-                <div className="request-chat-search-filter">
-                    
-                    <input
-                        type="text"
-                        placeholder="Search Email"
-                    />
+                    <div className="request-chat-search-filter">
+                        
+                        <input
+                            type="text"
+                            placeholder="Search Email"
+                        />
 
-                </div>
-                    
-                <div className="request-chat-user-list">
-                    {data.users.map(info => (info.id !== dataId.me.id) && (
-                        <div className="request-chat-single-user">
-                            <p>{info.first_name} {info.last_name}</p>
-                            <p>{info.email}</p>
-                            {select === false && (
-                                <button onClick={() => select ? setSelect(false) : setSelect(info.id)}>Select</button>
-                            )}
-                            {select === info.id && (
-                                <>
-                                <button onClick={() => (handleSubmit(), setSelect(false))}>Submit</button>
-                                <button onClick={() => setSelect(false)}>Cancel</button>
-                                </>
-                            )}
-                        </div>
-                    ))}
-                </div>
+                    </div>
+                        
+                    <div className="request-chat-user-list">
+                        {data.users.map(info => (info.id !== dataId.me.id) && (
+                            <div className="request-chat-single-user">
+                                <p>{info.first_name} {info.last_name}</p>
+                                <p>{info.email}</p>
+                                {select === false && (
+                                    <button onClick={() => select ? setSelect(false) : setSelect(info.id)}>Select</button>
+                                )}
+                                {select === info.id && (
+                                    <>
+                                    <button onClick={() => (handleSubmit(), setSelect(false))}>Submit</button>
+                                    <button onClick={() => setSelect(false)}>Cancel</button>
+                                    </>
+                                )}
+                            </div>
+                        ))}
+                    </div>
 
                 </div>
             )}

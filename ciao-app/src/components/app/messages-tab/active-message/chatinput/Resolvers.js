@@ -1,17 +1,17 @@
 import {gql} from 'apollo-boost'
 
 export const CREATE_MESSAGE = gql`
-mutation CREATE_MESSAGE(
-    $chatId: String!
-    $text: String!
-){
-    createMessage(
-        chatId: $chatId
-        text: $text
-    ){
-        id
+    mutation CREATE_MESSAGE(
+        $chatId: String!
+        $text: String!
+        ){
+        createMessage(
+            chatId: $chatId
+            text: $text
+        ){
+            id
+        }
     }
-}
 `
 
 export const ACTIVE_CHAT = gql`
@@ -36,7 +36,6 @@ export const ACTIVE_CHAT = gql`
         }
     }
 `
-
 
 export const NEW_MESSAGE_SUBSCRIPTION = gql`
     subscription {

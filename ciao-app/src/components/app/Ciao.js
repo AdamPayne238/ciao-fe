@@ -7,19 +7,11 @@ import Contacts from './contacts-tab/Contacts'
 import Notifications from './notifications-tab/Notifications'
 import Settings from './settings-tab/Settings'
 import './Ciao.scss'
-
-// SVG
 import Icon from '../../global/Icon'
 import { ICONS } from '../../global/IconConstants'
-
 import { useLocation } from 'react-router-dom'
-
-// Context
 import { ActivityProvider } from '../../global/context/ActivityContext'
-
-// CONTEXT STORE
 import { StoreProvider } from '../../global/context/Store'
-
 
 
 const Ciao = () => {
@@ -66,8 +58,7 @@ const Ciao = () => {
                     color={pathname.includes('/home') ? '#181926' : '#181926'} // '#181926'
                 />
             </div> */}
-
-
+            
         </>
     )
 }

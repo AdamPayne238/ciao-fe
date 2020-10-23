@@ -1,11 +1,8 @@
 import React from 'react'
-
-//Styles
 import './MessageNav.scss'
-
 import { NavLink } from 'react-router-dom'
-
 import RequestChat from './request-chat/RequestChat'
+
 
 const MessageNav = () => {
 

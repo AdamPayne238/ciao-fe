@@ -64,7 +64,7 @@ const ChatInput = () => {
             </div>
 
             <form onSubmit={e => {
-                e.preventDefault() // stops browser from reloading on input
+                e.preventDefault()
                 createMessage({
                     variables: {
                         chatId: state.id,
