@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { useQuery, useMutation } from '@apollo/react-hooks'
+import React from 'react'
 import './Notifications.scss'
 import { useLocation } from 'react-router-dom'
-
-import { REQUESTED_CHAT_FRIEND } from './Resolvers'
 
 
 const Notifications = () => {
 
     let { pathname } = useLocation()
-
-    const { error, loading, data } = useQuery(REQUESTED_CHAT_FRIEND)
-
-    
 
     return(
         <>
